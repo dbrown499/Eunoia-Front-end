@@ -1,27 +1,18 @@
 import React from 'react'
 import HamburgerMenu from './HamburgerMenu';
-import ShoppingCartIcon from './ShoppingCartIcon'
+// import ShoppingCartIcon from './ShoppingCartIcon'
+import '../Styling/Navbar.scss'
 
 const Navbar = () => {
 
-    // const [searchInput, setSearchInput] = useState("");
-    // const handleChange = (e) => {
-    //     e.preventDefault();
-    //     setSearchInput(e.target.value);
-    //   };
-
   return (
-    <nav>
-    <h1>SIGN UP FOR EMAIL & SMS</h1>
-    <h2>Euphoria</h2>
-    <input
-   type="text"
-   placeholder="Search Here"
-//    onChange={handleChange}
-//    value={searchInput} 
-   />
-   <HamburgerMenu/>
-   <ShoppingCartIcon />
+    <nav className='nav'>
+   {/* <ShoppingCartIcon/> */}
+    <HamburgerMenu />
+    <h2 className='web_name'>œunöia*</h2>
+    <p className='login'>LOGIN</p>
+    <p className='cart'>CART (0)</p>
+    <button className='join_button'>JOIN THE WAITLIST</button>
     </nav>
   )
 }

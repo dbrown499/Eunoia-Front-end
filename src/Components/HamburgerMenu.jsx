@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Components/HamburgerMenu.scss'
+import '../Styling/HamburgerMenu.scss'
 
 const HamburgerMenu = () => {
     return (

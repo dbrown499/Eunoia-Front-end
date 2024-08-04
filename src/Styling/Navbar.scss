@@ -1,0 +1,38 @@
+.nav {
+    display: grid;
+    grid-template-columns: 10% 56% 6% 6% 30%;
+}
+
+.web_name {
+    font-size: 30pt;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    margin-left: auto;
+    padding-right: 150px;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+}
+
+.login {
+    font-family: sans Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+.cart {
+    font-family: sans Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+.join_button {
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    font-family: sans Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+    padding: 25px;
+    width: 250px;
+    margin: 30px;
+}
