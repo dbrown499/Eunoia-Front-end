@@ -12,7 +12,7 @@ const Navbar = () => {
     <h2 className='web_name'>œunöia*</h2>
     <p className='login'>LOGIN</p>
     <p className='cart'>CART (0)</p>
-    <button className='join_button'>JOIN THE WAITLIST</button>
+    <button className='join_button'>SHOP NOW</button>
     </nav>
   )
 }
