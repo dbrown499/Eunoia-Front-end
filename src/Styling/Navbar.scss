@@ -1,38 +1,101 @@
 .nav {
     display: grid;
-    grid-template-columns: 10% 56% 6% 6% 30%;
+    grid-template-columns: 13% 58.5% 7% 7% 30%;
+    margin-bottom: 70px;
+    margin-top: 35px;
 }
 
+.web_name-holder{
+//     margin: 0 auto;
+//     padding: 0;
+//     border: solid red 1px ;
+    // width: fit-content;
+    // text-align: right;
+
+//     // height: 30px;
+}
 .web_name {
+    // border: solid red 1px ;
     font-size: 30pt;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: white;
-    margin-left: auto;
-    padding-right: 150px;
+    margin-left: 275px;
+    padding-right: 0px;
     letter-spacing: 2px;
-    display: flex;
-    align-items: center;
+    // text-align: right;
+    text-decoration: none;
+    // display: absolute;
+    // align-items: right;
+    // text-align: right;
 }
 
 .login {
     font-family: sans Arial, Helvetica, sans-serif;
     display: flex;
     align-items: center;
+    text-decoration: none;
+    color: white;
+    margin-top: 25px;
+
 }
 
 .cart {
     font-family: sans Arial, Helvetica, sans-serif;
     display: flex;
     align-items: center;
+    text-decoration: none;
+    color: white;
+margin-top: 25px;
 }
 
 .join_button {
-    color: white;
+    border: solid white 1px;
+    background-color: black;
+    width: 200px;
+    height: 50px;
+    // border: none;
+    // font-family: sans Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+    padding: 0px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.join_button:hover {
+     border: solid black 1px;
+    background-color: white;
+    width: 200px;
+    height: 50px;
+    // border: none;
+    // font-family: sans Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+    padding: 0px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.shop-now-holder {
+    padding: 17px 53px;
+    margin-left: 0;
+    margin-right: 0;
     background-color: black;
     border: 1px solid white;
     font-family: sans Arial, Helvetica, sans-serif;
     letter-spacing: 2px;
-    padding: 25px;
-    width: 250px;
-    margin: 30px;
+    color: white;
+    text-decoration: none;
+    display: absolute;
+}
+
+.shop-now-holder:hover {
+     padding: 17px 53px;
+    margin-left: 0;
+    margin-right: 0;
+    background-color: white;
+    border: 1px solid black;
+    font-family: sans Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+    color: black;
+    text-decoration: none;
+    display: absolute;
 }

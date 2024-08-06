@@ -2,7 +2,17 @@ body {
   background-color: black;
   color: hsl(0deg 0% 98%);
   margin: 0;
+  /* margin-right: 0; */
+  box-sizing: border-box;
+   /* max-width: 1280px; */
+  /* margin: 0 auto; */
+  /* padding: 2rem; */
+  text-align: center;
+  width: 100vw;
+
 }
 
+/* #root{
 
-
+  width:fit-content;
+} */

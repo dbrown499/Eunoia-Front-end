@@ -26,7 +26,7 @@
   // border: solid 1px red;
 color: hsl(0deg 0% 98%);
   display: table;
-  white-space: pre;
+  // white-space: pre;
   position: relative;
   animation: scroll 0s linear infinite;
   z-index: auto;
@@ -40,8 +40,8 @@ color: hsl(0deg 0% 98%);
   -moz-transform: translateX(-100%);
   -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
-  -moz-animation: my-animation 10s linear infinite;
-  -webkit-animation: my-animation 10s linear infinite;
+  // -moz-animation: my-animation 5s linear infinite;
+  // -webkit-animation: my-animation 5s linear infinite;
   animation: my-animation 90s linear infinite;
 
 }
