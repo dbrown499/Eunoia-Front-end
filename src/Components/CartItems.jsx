@@ -26,17 +26,16 @@ const handleDelete = () => {
 
   return (
     <>
-    <thead>
+    <thead className='checkout-row-one'>
           <tr className='checkout-row-one'>
             <th className='checkout-head-one'>Item</th>
             <th className='checkout-head-two'>Price</th>
             <th className='checkout-head-three'>Quantity</th>
-            <th className='checkout-head-four'></th>
           </tr>
         </thead>
-          <tr>
+          <tr className='each-row'>
             <td className='checkout-details'>
-            {type == "Sweaters" ? (<img id='sweater_img' src="../assets/IMG_2519.jpeg" alt="img" />) : type == "Pants" ? (<img id='sweater_img' src="../assets/0521152011_664c3d1bdbbc2.jpg" alt="img" />): type == "Shirts" ? (<img id='sweater_img' src="../assets/istockphoto-471074802-612x612.jpg" alt="img" />): null }
+            {type == "Sweaters" ? (<img id='clothe-img' src="../assets/IMG_2519.jpeg" alt="img" />) : type == "Pants" ? (<img id='clothe-img' src="../assets/0521152011_664c3d1bdbbc2.jpg" alt="img" />): type == "Shirts" ? (<img id='clothe-img' src="../assets/istockphoto-471074802-612x612.jpg" alt="img" />): null }
               <p className='checkout-description'>{type}</p>
             </td>
             <td className='item-price'>{value[0].price}</td>
@@ -47,7 +46,7 @@ const handleDelete = () => {
                 value={value.length}
                 onChange={handleChange} />
             </td>
-            <td onClick={handleDelete} className='delete'>X</td>
+            <button onClick={handleDelete} className='delete'>X</button>
           </tr>
     </>
   )
