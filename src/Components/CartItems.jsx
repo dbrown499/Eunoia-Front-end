@@ -1,51 +1,55 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState } from 'react'
 import '../Styling/CartItem.scss'
-// import { useParams } from 'react-router-dom'
+// import Sweaters from '../assets/IMG_2519.jpeg'
+// import Pants from '../assets/0521152011_664c3d1bdbbc2.jpg'
+// import Shirts from '../assets/istockphoto-471074802-612x612.jpg'
 
-const CartItems = ({quantity, items}) => {
-  console.log(items)
-//     const [cartNum, setCartNum] = useState(0)
-// let { num } = useParams()
+const CartItems = ({type, value}) => {
+const [deleteQuantity, setDeleteQuantity] = useState([...value])
 
-// useEffect(() => {
-//     const parsedNum = parseInt(num, 10);
-//     setCartNum(parsedNum);
-// }, [num]);
+
+const handleDelete = () => {
+  if (deleteQuantity.length > 0) {
+    // Create a new array without the last item
+    const updatedQuantity = deleteQuantity.slice(0, -1);
+    // Update the state with the new array
+    setDeleteQuantity(updatedQuantity);
+  }
+   
+  }
+ 
+
+  const handleChange = (e) => {
+    e.preventDefault();
+
+  }
 
   return (
-   <section className='checkout'>
-<h1 className='checkout-title'>{`Your Cart (${quantity} item${quantity !== 1 ? 's' : ''})`}</h1>   
-<table className='checkout-table'>
-      <thead className='checkout-head'>
-      <tr className='checkout-row-one'>
-        <th className='checkout-head-one'>Item</th>
-        <th className='checkout-head-two'>Price</th>
-        <th className='checkout-head-three'>Quantity</th>
-        <th className='checkout-head-four'>X</th>
-      </tr>
-      </thead>
-      <tbody className='checkout-body'>
-      <tr>
-        <td>
-          {/* {items.map((item)=>{
-            if(item.type_clothing)
-          })} */}
-          {/* <img id='sweater-img' src="/assets/IMG_2519.jpeg" alt="" /> */}
-          <p>item is the newest collection</p>
-        </td>
-        <td>59.99</td>
-        <td>
-          <input
-        type="number" 
-        value={quantity}/>
-        </td>
-        <td>X</td>
-      </tr>
-
-      </tbody>
-    </table>
-    <button>CHECKOUT</button>
-    </section>
+    <>
+    <thead>
+          <tr className='checkout-row-one'>
+            <th className='checkout-head-one'>Item</th>
+            <th className='checkout-head-two'>Price</th>
+            <th className='checkout-head-three'>Quantity</th>
+            <th className='checkout-head-four'></th>
+          </tr>
+        </thead>
+          <tr>
+            <td className='checkout-details'>
+            {type == "Sweaters" ? (<img id='sweater_img' src="../assets/IMG_2519.jpeg" alt="img" />) : type == "Pants" ? (<img id='sweater_img' src="../assets/0521152011_664c3d1bdbbc2.jpg" alt="img" />): type == "Shirts" ? (<img id='sweater_img' src="../assets/istockphoto-471074802-612x612.jpg" alt="img" />): null }
+              <p className='checkout-description'>{type}</p>
+            </td>
+            <td className='item-price'>{value[0].price}</td>
+            <td>
+              <input
+                id='quantity-input'
+                type="number"
+                value={value.length}
+                onChange={handleChange} />
+            </td>
+            <td onClick={handleDelete} className='delete'>X</td>
+          </tr>
+    </>
   )
 }
 

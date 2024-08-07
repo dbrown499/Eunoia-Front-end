@@ -1,12 +1,42 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
 import CartItems from '../Components/CartItems'
+// import '../Styling/CartItems'
 
-const Cart = ({quantity, items}) => {
+const Cart = ({ quantity, items }) => {
+
+  const sortClothes = (arr) => {
+    let newObj = {};
+
+    for (let item of arr) {
+      let name = item.type_of_clothing;
+      if (!newObj[name]) {
+        newObj[name] = [];
+      }
+      newObj[name].push(item);
+    }
+
+    return newObj;
+  };
+  console.log(sortClothes(items))
+
+  const sortedItems = sortClothes(items)
+
+
   return (
-    <>
-    <CartItems quantity={quantity} items={items}/>
-    </>
+
+    <section className='checkout'>
+      <h1 className='checkout-title'>{`Your Cart (${quantity} item${quantity !== 1 ? 's' : ''})`}</h1>
+
+      <table className='checkout-table'>
+        <tbody className='checkout-body'>
+          {Object.entries(sortedItems).map(([type, value], index) => (
+            <CartItems key={index} quantity={quantity} items={items} sort={sortClothes} type={type} value={value} />
+          ))}
+        </tbody>
+      </table>
+      <button className='checkout-button'>CHECKOUT</button>
+    </section>
+
   )
 }
 

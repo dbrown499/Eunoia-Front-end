@@ -1,41 +1,130 @@
 .checkout {
-    border: solid red 1px;
-    
+    background: linear-gradient(rgba(0, 0, 0, 0.5), hsl(0deg 0% 23%), rgba(0, 0, 0, 0.5));
+
+    text-align: center;
+//   border: 3px solid green;
+  margin-bottom: 75px;
+  font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+  letter-spacing: 1px;
 }
 
 .checkout-title {
-    border: solid red 1px;
-
+    // border: solid red 1px;
+font-size: 30pt;
 }
 
 .checkout-table {
-   border: solid red 1px;
+    width: 60%;
+
+    margin: auto;
+//    border: solid red 1px;
+   margin-bottom: 90px;
 }
 
-
-.checkout-head {
-
-    border: solid red 1px;
-
-}
 .checkout-row-one {
-    border: solid red 1px;
+    // border: solid red 1px;
 
 }
 .checkout-head-one {
-
-    border: solid red 1px;
-
+text-align: left;
+    // border: solid red 1px;
+font-size: 18pt;
 }
 .checkout-head-two {
-    border: solid red 1px;
+    font-size: 18pt;
+
+    // border: solid red 1px;
 
 }
 .checkout-head-three {
-    border: solid red 1px;
+    // border: solid red 1px;
+    font-size: 18pt;
 
 }
 .checkout-head-four {
-    border: solid red 1px;
+    // border: solid red 1px;
+text-align: right;
+font-size: 18pt;
 
+}
+
+.checkout-body {
+    // border: solid red 1px;
+
+}
+
+.checkout-details {
+display: grid;
+grid-template-columns: 33% 65%;
+    // border: solid red 1px;
+font-size: 18pt;
+}
+
+#clothe-img{
+    // border: solid red 1px;
+// margin-right: 0;
+// display: flex;
+
+  height: 160px;
+}
+
+.checkout-description{
+    // display: flex;
+    text-align: left;
+    // border: solid red 1px;
+margin-left: 10px;
+// padding-left: 0;
+}
+
+.item-price {
+    // border: solid red 1px;
+    font-size: 15pt;
+
+}
+
+#quantity-input{
+    border: none;
+    border-radius: 5px;
+width: 35px;
+text-align: center;
+outline-color: transparent;
+}
+#quantity-input::-webkit-inner-spin-button,
+#quantity-input::-webkit-outer-spin-button {
+    -webkit-appearance: none; 
+            margin: 0; 
+}
+
+.delete {
+    // border: solid red 1px;
+    padding: 0;
+    font-size: 13.5pt;
+    width: 5px;
+}
+
+.checkout-button {
+    border: solid red 1px;
+    padding: 17px 53px;
+    margin-left: 0;
+    margin-right: 0;
+    background-color: black;
+    border: 1px solid white;
+    font-family: sans Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+    color: white;
+    text-decoration: none;
+    display: absolute;
+}
+
+.checkout-button:hover {
+    padding: 17px 53px;
+   margin-left: 0;
+   margin-right: 0;
+   background-color: white;
+   border: 1px solid black;
+   font-family: sans Arial, Helvetica, sans-serif;
+   letter-spacing: 2px;
+   color: black;
+   text-decoration: none;
+   display: absolute;
 }

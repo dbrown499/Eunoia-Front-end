@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
+import Popup from 'reactjs-popup';
 import { Link, useParams } from 'react-router-dom';
 import Navbar from './Navbar';
 
 const OneItem = ({ eachItem, cart, setCart}) => {
     const [quantity, setQuantity] = useState(0);
-    let { type } = useParams();
+    // let { type } = useParams();
 
     const handleQuantityChange = (e) => {
-        setQuantity(e.target.value);
+        if(e.target.value >= 0){
+            setQuantity(e.target.value);
+
+        }
     };
     
     const passInfo = () => {
@@ -36,12 +40,11 @@ const OneItem = ({ eachItem, cart, setCart}) => {
                     value={quantity}
                     onChange={handleQuantityChange}
                 /><br />
+                
                 <button className='add-to-cart' onClick={handleAddToCart} >Add To Cart</button>
             </div>
             <div className='img-container'>
-                {eachItem.type_of_clothing === "Sweaters" && (
-                    <img id='sweater_img' src="../assets/IMG_2519.jpeg" alt="Sweater" />
-                )}
+            {eachItem.type_of_clothing == "Sweaters" ? (<img id='sweater_img' src="../assets/IMG_2519.jpeg" alt="img" />) : eachItem.type_of_clothing == "Pants" ? (<img id='sweater_img' src="../assets/0521152011_664c3d1bdbbc2.jpg" alt="img" />): eachItem.type_of_clothing == "Shirts" ? (<img id='sweater_img' src="../assets/istockphoto-471074802-612x612.jpg" alt="img" />): null }
             </div>
             <div>
                 <Link to={`/clothes`} className='back'>← BACK</Link>

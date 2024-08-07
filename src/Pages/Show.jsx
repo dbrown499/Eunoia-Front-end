@@ -19,7 +19,7 @@ const Show = ({cart, setCart}) => {
         let newArr = new Array()
 
         for (let item of arr) {
-            if (item.type_of_clothing && item.size === 'small') {
+            if (item.type_of_clothing && item.size == 'small') {
                 newArr.push(item)
             }
         }
