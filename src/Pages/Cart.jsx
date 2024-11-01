@@ -28,6 +28,13 @@ const Cart = ({ quantity, items }) => {
       <h1 className='checkout-title'>{`Your Cart (${quantity} item${quantity !== 1 ? 's' : ''})`}</h1>
 
       <table className='checkout-table'>
+        <thead className='checkout-row-one'>
+          <tr className='checkout-row-one'>
+            <th className='checkout-head-one'>Item</th>
+            <th className='checkout-head-two'>Price</th>
+            <th className='checkout-head-three'>Quantity</th>
+          </tr>
+        </thead>
         <tbody className='checkout-body'>
           {Object.entries(sortedItems).map(([type, value], index) => (
             <CartItems key={index} quantity={quantity} items={items} sort={sortClothes} type={type} value={value} />

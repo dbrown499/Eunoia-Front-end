@@ -4,35 +4,26 @@ import '../Styling/CartItem.scss'
 // import Pants from '../assets/0521152011_664c3d1bdbbc2.jpg'
 // import Shirts from '../assets/istockphoto-471074802-612x612.jpg'
 
-const CartItems = ({type, value}) => {
-const [deleteQuantity, setDeleteQuantity] = useState([...value])
+const CartItems = ({quantity, items, type, value}) => {
+const [deleteQuantity, setDeleteQuantity] = useState(quantity)
 
 
 const handleDelete = () => {
-  if (deleteQuantity.length > 0) {
-    // Create a new array without the last item
-    const updatedQuantity = deleteQuantity.slice(0, -1);
-    // Update the state with the new array
+    const updatedQuantity = deleteQuantity - 1;
     setDeleteQuantity(updatedQuantity);
-  }
-   
-  }
- 
+  
+};
 
-  const handleChange = (e) => {
-    e.preventDefault();
-
+const handleChange = (e) => {
+  const newQuantity = parseInt(e.target.value);
+  if (newQuantity >= 0) {
+    setDeleteQuantity(newQuantity);
   }
+};
 
   return (
     <>
-    <thead className='checkout-row-one'>
-          <tr className='checkout-row-one'>
-            <th className='checkout-head-one'>Item</th>
-            <th className='checkout-head-two'>Price</th>
-            <th className='checkout-head-three'>Quantity</th>
-          </tr>
-        </thead>
+   
           <tr className='each-row'>
             <td className='checkout-details'>
             {type == "Sweaters" ? (<img id='clothe-img' src="../assets/IMG_2519.jpeg" alt="img" />) : type == "Pants" ? (<img id='clothe-img' src="../assets/0521152011_664c3d1bdbbc2.jpg" alt="img" />): type == "Shirts" ? (<img id='clothe-img' src="../assets/istockphoto-471074802-612x612.jpg" alt="img" />): null }

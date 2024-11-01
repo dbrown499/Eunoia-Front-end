@@ -99,3 +99,24 @@ margin-top: 25px;
     text-decoration: none;
     display: absolute;
 }
+
+
+@media only screen and  (min-width:  980px) and (orientation: portrait){
+
+// .nav {
+//     display: grid;
+//     grid-template-columns: 13% 58.5% 7% 7% 30%;
+//     margin-bottom: 70px;
+//     margin-top: 35px;
+// }
+
+.login {
+    font-family: sans Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    margin-top: 25px;
+
+}
+}
