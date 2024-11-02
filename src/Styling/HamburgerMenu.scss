@@ -1,0 +1,25 @@
+.hamburger{
+    // border: solid 1px green;
+    width: 2rem;
+    height: 1.5rem; 
+    display: flex; 
+    justify-content: space-around;
+    flex-flow: column nowrap; 
+    // z-index: 10;
+    margin: auto;
+    align-items: center;
+    cursor: pointer;
+}
+
+.burger{
+    width: 1.5rem;
+    height: .2rem; 
+    border-radius: 10px; 
+    background-color: white; 
+    // margin-bottom: .1px;
+    // transform-origin: 1px;
+    // transition: all 0.3s linear;
+}
+
+
+ 
