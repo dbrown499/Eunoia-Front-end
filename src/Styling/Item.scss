@@ -1,0 +1,122 @@
+.each-item {
+    margin-top: 125px;
+    margin-bottom: 100px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), hsl(0, 0%, 25%), rgba(0, 0, 0, 0.5));
+width: 100vw;
+    // border: red solid 1px;
+}
+
+.each-item-info{
+    // border: red solid 1px;
+    margin-left: 125px;
+    text-align: left;
+}
+.link {
+    text-decoration: none;
+
+}
+
+.each-item-name{
+    // border: red solid 1px;
+    font-family: sans Arial, Helvetica, sans-serif;
+    font-size: 50pt;
+    letter-spacing: -5px;
+    transform: scale(1, 1.5);
+    color: white;
+    cursor: pointer;
+}
+.each-item-price{
+    // border: red solid 1px;
+font-family: monospace;
+font-size: 27pt;
+
+}
+.each-item-description{
+    // border: red solid 1px;
+font-family: 'Courier New', Courier, monospace;
+margin-top: 35px;
+margin-bottom: 90px;
+}
+
+#quantity-label{
+    // border: red solid 1px;
+font-family: monospace;
+font-size: 11pt;
+}
+#quantity{
+    border:hsl(0, 0%, 54%) solid 1px;
+    background: linear-gradient(hsl(0deg 0% 15%), hsl(0deg 0% 7%) );
+    height: 75px;
+width: 85px;
+margin-top: 3px;
+margin-bottom: 18px;
+color: white;
+padding-left: 20px;
+font-family: monospace;
+font-size: 11pt;
+outline-color: transparent;
+}
+.add-to-cart{
+    border: white solid 1px;
+color: white;
+background-color: black;
+width: 175px;
+padding: 25px;
+
+font-family:  monospace;
+font-size: 11pt;
+// transform: scale(1, 1.2);
+
+}
+
+.back-button {
+    border: white solid 1px;
+color: white;
+background: linear-gradient(hsl(0deg 0% 15%), hsl(0deg 0% 7%) );
+width: 175px;
+padding: 25px;
+
+font-family:  monospace;
+font-size: 11pt;
+}
+
+.back-button:hover {
+    border: none;
+color: black;
+background-color: white;
+width: 175px;
+padding: 25px;
+
+font-family:  monospace;
+font-size: 11pt;
+}
+
+.back{
+    border: none;
+    color: white;
+    background: linear-gradient(hsl(0deg 0% 5%), black);
+    width: 175px;
+    padding: 25px;
+    text-decoration: none;
+    font-family:  monospace;
+    font-size: 11pt;
+    // margin-top: 300px;
+    display: flex;
+}
+
+.img-container{
+    // border: red solid 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // height: 100%;
+}
+
+#sweater_img {
+    // border: red solid 1px;
+    // max-width: 100%;
+    height: 525px;
+    // height: 100px;
+}
