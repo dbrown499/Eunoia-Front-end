@@ -7,7 +7,7 @@ const Home = () => {
         <>
             <p className='message'>Beautiful Thinking Inspired By  <br />The Fear of Being Average...</p>
             <section id="scroll-container">
-                <p id="scroll-text">ŒUNÖIA ŒUNÖIA</p>
+                <p id="scroll-text">ŒUNÖIA </p>
             </section>
             <section className='waitlist'>
                 <h2 className='waitlist-title'>JOIN THE WAITLIST</h2>

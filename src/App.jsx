@@ -15,9 +15,7 @@ function App() {
 
   return (
     <>
-    <header>
       <Navbar quantity={cart.totalItems}/>
-    </header>
     <main>
       <Routes>
       <Route path="/" element={<Home />} />
