@@ -1,4 +1,16 @@
+.burger-menu{
+    // border: solid 1px green;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    place-items: center; /* centers both vertically and horizontally */
+    font-family: sans Arial, Helvetica, sans-serif;
+    margin-right: 50%;
+    cursor: pointer;
+
+}
+
 .hamburger{
+    margin-right: 5px;
     // border: solid 1px green;
     width: 2rem;
     height: 1.5rem; 
@@ -6,12 +18,14 @@
     justify-content: space-around;
     flex-flow: column nowrap; 
     // z-index: 10;
-    margin: auto;
-    align-items: center;
+    // margin: auto;
+    // align-items: center;
     cursor: pointer;
 }
 
 .burger{
+    // border: solid 1px green;
+
     width: 1.5rem;
     height: .2rem; 
     border-radius: 10px; 

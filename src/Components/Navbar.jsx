@@ -10,20 +10,19 @@ const Navbar = ({quantity}) => {
   return (
     <nav className='nav'>
       {/* <ShoppingCartIcon/> */}
-      <HamburgerMenu />
+      <HamburgerMenu className='burger-menu'/>
       <h2 className='web_name-holder'>
       <Link to={'/'} className='web_name'>œunöia*</Link>
       </h2>
-      {/* <div> */}
       <p>
-      <Link className='login'>LOGIN</Link>
+      <Link className='login'>LOGIN / REGISTER</Link>
+      <Link className='shop-now' to={'/clothes'}>SHOP NOW</Link>
       </p>
-      <p>
-      <Link to={'/clothes/cart'} className='cart'>{`CART (${quantity})`}</Link>
-      </p>
-      <button className='join_button'>
-        <Link className='shop-now-holder' to={'/clothes'}>SHOP NOW</Link>
-      </button>
+      {/* <p> */}
+      {/* <Link to={'/clothes/cart'} className='cart'>{`CART (${quantity})`}</Link> */}
+      {/* </p> */}
+      {/* <button className='join_button'> */}
+      {/* </button> */}
       {/* </div> */}
     </nav>
   )
