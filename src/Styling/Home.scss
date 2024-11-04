@@ -6,7 +6,6 @@
   line-height: 25px;
   text-align: center;
   margin: 50px 100px 75px 100px;
-  // font-family: American Typewriter, serif, Arial narrow;
   // border: solid 1px red;
   font-family: monospace;
 }
@@ -15,8 +14,6 @@
   margin: 10px 10px 0px 10px;
   opacity: 0.9;
   height: 330px;
-  // border: solid 1px red;
-  // position: relative;
   background: linear-gradient(rgba(0, 0, 0, 0.5), hsl(0, 0%, 25%));
   font-stretch: narrower;
   overflow: hidden;
@@ -49,73 +46,16 @@
   }
 }
 
-
-// #scroll-text {
-//   border: solid 1px red;
-//   opacity: 0.9;
-//   color: hsl(0deg 0% 98%);
-//   // display: table;
-//   white-space: pre;
-//   position: relative;
-//   animation: scroll 0s linear infinite;
-//   z-index: auto;
-//   letter-spacing: -30px;
-//   word-spacing: 200px;
-//   font-weight: 1000;
-//   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-//   padding: 0;
-//   margin: 0;
-//   font-size: 250pt;
-//   -moz-transform: translateX(-100%);
-//   -webkit-transform: translateX(-100%);
-//   transform: translateX(-100%);
-//   // -moz-animation: my-animation 5s linear infinite;
-//   // -webkit-animation: my-animation 5s linear infinite;
-//   animation: my-animation 50s linear infinite;
-
-// }
-
-// /*for Firefox */
-// @-moz-keyframes my-animation {
-//   from {
-//     -moz-transform: translateX(-100%);
-//   }
-
-//   to {
-//     -moz-transform: translateX(100%);
-//   }
-// }
-
-// /* for Chrome */
-// @-webkit-keyframes my-animation {
-//   from {
-//     -webkit-transform: translateX(-100%);
-//   }
-
-//   to {
-//     -webkit-transform: translateX(100%);
-//   }
-// }
-
-// @keyframes my-animation {
-//   from {
-//     -moz-transform: translateX(100%);
-//     -webkit-transform: translateX(100%);
-//     transform: translateX(100%);
-//   }
-
-//   to {
-//     -moz-transform: translateX(-100%);
-//     -webkit-transform: translateX(-100%);
-//     transform: translateX(-100%);
-//   }
-// }
-
 .waitlist {
   background: linear-gradient(hsl(0deg 0% 23%), rgba(0, 0, 0, 0.5), hsl(0deg 0% 23%));
   // border: solid 1px red;
-  padding: 50px;
-  // margin-bottom: 0;
+  padding: 150px;
+  display: grid;
+  place-items: center; /* centers both vertically and horizontally */
+  grid-template-rows: 33% 33% 33%;
+  margin: 0px 10px 0px 10px;
+  text-align: center;
+
 }
 
 .waitlist-title {
@@ -123,9 +63,8 @@
   font-family: sans-serif;
   font-size: 50pt;
   letter-spacing: -5px;
-  // font-style: ;
   word-spacing: 7px;
-  // font-stretch: narrower;
+  font-stretch: narrower;
   font-weight: 500;
   margin-bottom: 30px;
   transform: scale(1, 1.3);
@@ -141,26 +80,17 @@
   line-height: 25px;
   color: hsl(0deg 0% 98%);
   margin-bottom: 60px;
-
 }
 
 .sign-up_container {
-  // background-color: hsl(300deg 0% 21%);
   // border: solid 1px red;
-  // width: fit-content;
-
+  width: 60%;
 }
 
 .sign-up_label {
-  position: absolute;
-  font-size: 11pt;
   font-family: monospace;
-  // width: fit-content;
   // border: solid 1px red;
   display: flex;
-  left: 380px;
-  // margin-bottom: 15px;
-  // word-spacing: 20px;
 }
 
 .require {
@@ -174,19 +104,21 @@
 
 #sign-up {
   border: none;
-  width: 660px;
-  height: 45px;
-  margin-top: 10px;
+  width: 100%;
+  height: 40px;
   margin-bottom: 25px;
   outline-color: transparent;
+  font-size: 13.5pt;
 }
 
 .sign-up_button {
-  border: solid 1px white;
+  border: solid rgb(175, 175, 175) 1px;
   font-family: monospace;
   font-size: 12pt;
   font-weight: 9100;
-  background-color: black;
+  background-color: rgb(20, 20, 20);  
   color: white;
   padding: 20px 30px;
 }
+
+
