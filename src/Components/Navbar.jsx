@@ -16,7 +16,7 @@ const Navbar = ({quantity}) => {
       </h2>
       <p>
       <Link className='login'>LOGIN / REGISTER</Link>
-      <Link className='shop-now' to={'/clothes'}>SHOP NOW</Link>
+      <Link className='shop-now' to={'/products'}>SHOP NOW</Link>
       </p>
       {/* <p> */}
       {/* <Link to={'/clothes/cart'} className='cart'>{`CART (${quantity})`}</Link> */}

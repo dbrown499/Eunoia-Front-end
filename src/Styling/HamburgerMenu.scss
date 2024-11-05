@@ -4,7 +4,7 @@
     grid-template-columns: 50% 50%;
     place-items: center; /* centers both vertically and horizontally */
     font-family: sans Arial, Helvetica, sans-serif;
-    margin-right: 50%;
+    margin-right: 75%;
     cursor: pointer;
 
 }
@@ -33,7 +33,23 @@
     // margin-bottom: .1px;
     // transform-origin: 1px;
     // transition: all 0.3s linear;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+
 }
 
-
+  
+ 
+  /* Transform for each line to make an "X" when active */
+  .hamburger.open .burger1 {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .hamburger.open .burger2 {
+    opacity: 0; /* Hide middle line */
+  }
+  
+  .hamburger.open .burger3 {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
  
