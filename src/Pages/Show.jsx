@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+import SelectedItem from '../Components/SelectedItem.jsx';
+// import '../Styling/App.scss';
 // import { useParams } from 'react-router-dom';
 // import OneItem from '../Components/OneItem';
 
 // const API = import.meta.env.VITE_API_URL;
 
-const Show = ({cart, setCart}) => {
+// const Show = ({cart, setCart}) => {
+const Show = () => {
     // const [showItem, setShowItem] = useState([])
     // let { type } = useParams()
 
@@ -31,7 +34,10 @@ const Show = ({cart, setCart}) => {
         //     return (<OneItem key={oneItem.id} eachItem={oneItem} cart={cart} setCart={setCart}/>)
         // })
         // }</div>
-        <div>hey</div>
+        <section className='selected-item'>
+            <h1>Home - Store - Kiss The Moment Goodbye </h1>
+            <SelectedItem/>
+        </section>
     )
 }
 
