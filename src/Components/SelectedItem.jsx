@@ -42,10 +42,11 @@ const SelectedItem = ({ images, itemInfo }) => {
 
                 <section>
                     <div className="product-form">
-                        <h1 className="product-title">Kanye West Donda Atlanta Listening Event L/S T shirt Cream</h1>
+                    {itemInfo && itemInfo[0] && <h1 className="product-title">{itemInfo[0].name} <br /> {itemInfo[0].description}</h1>}
+
 
                         <div className="price">
-                            <span className="current-price">$109.00</span>
+                        {itemInfo && itemInfo[0] && <span className="current-price">${itemInfo[0].price}</span>}
                             <span className="original-price">$159.00</span>
                         </div>
 
@@ -60,15 +61,15 @@ const SelectedItem = ({ images, itemInfo }) => {
                             <option>2X-Large</option>
                         </select>
 
-                        <div className="cart-summary">
+                        {/* <div className="cart-summary">
                             <p>1x Kanye West Donda Atlanta Listening Event L/S T shirt Cream</p>
                             <span className="summary-price">$109.00</span>
-                        </div>
-
+                        </div> */}
+{/* 
                         <div className="subtotal">
                             <span>Subtotal</span>
                             <span>$109.00</span>
-                        </div>
+                        </div> */}
 
                         <div className="actions">
                             <button className="quantity-btn">-</button>

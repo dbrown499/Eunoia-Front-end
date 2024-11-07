@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { Link } from "react-router-dom";
 import HamburgerMenu from './HamburgerMenu';
-// import ShoppingCartIcon from './ShoppingCartIcon'
+import ShoppingCartIcon from './ShoppingCartIcon'
 import '../Styling/Navbar.scss'
 
 const Navbar = ({quantity}) => {
@@ -16,6 +16,7 @@ const Navbar = ({quantity}) => {
       </h2>
       <p>
       <Link className='login'>LOGIN / REGISTER</Link>
+      {/* {iteminfo && itemInfo[0]  <ShoppingCartIcon/>} */}
       <Link className='shop-now' to={'/products'}>SHOP NOW</Link>
       </p>
       {/* <p> */}

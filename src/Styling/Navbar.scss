@@ -1,6 +1,6 @@
 .nav {
     padding: 20px 20px;
-    // border: solid red 1px;
+    border: solid red 1px;
     display: grid;
     place-items: center; /* centers both vertically and horizontally */
     grid-template-columns: 33% 33% 33%;
@@ -9,7 +9,7 @@
 
 
 .web_name {
-    // border: solid red 1px ;
+    border: solid red 1px ;
     font-size: 30pt;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: white;
@@ -17,7 +17,7 @@
 }
 
 .login {
-    // border: solid red 1px;
+    border: solid red 1px;
     font-family: sans Arial, Helvetica, sans-serif;
     letter-spacing: 1.5px;
     text-decoration: none;

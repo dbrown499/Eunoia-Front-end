@@ -8,15 +8,15 @@ const API = import.meta.env.VITE_API_URL;
 
 // const Show = ({cart, setCart}) => {
 const Show = () => {
-    const [itemInfo, setItemInfo] = useState([])
-    let { type } = useParams()
+    const [itemInfo, setItemInfo] = useState([]);
+    let { type } = useParams();
 
     useEffect(() => {
         fetch(`${API}/products/${type}`)
             .then(res => res.json())
             .then(res => setItemInfo(res))
             .catch(err => console.log(err))
-    }, [type])
+    }, [type]);
 
     // const sortClothesBySize = (arr) => {
     //     let newArr = new Array()
