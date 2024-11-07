@@ -1,9 +1,12 @@
 .items-container {
     display: flex;
-    flex-wrap: wrap; /* Allows items to wrap to the next line */
-    gap: 30px; /* Space between each item-section */
-    justify-content: center; /* Center items horizontally */
-  }
+    flex-wrap: wrap;
+    /* Allows items to wrap to the next line */
+    gap: 30px;
+    /* Space between each item-section */
+    justify-content: center;
+    /* Center items horizontally */
+}
 
 // .item-section {
 //     border: 1px solid red;
@@ -12,7 +15,7 @@
 //     .item-img {
 //         border: 1px solid red;
 //         width: 20%;
-        
+
 //     }
 //     .item-description{
 //         border: 1px solid red;
@@ -28,44 +31,235 @@
 
 .item-section {
     // display: flex;
-    align-items: center; /* Align items vertically */
-    text-align: center ;
-    gap: 20px; /* Adds space between items */
+    align-items: center;
+    /* Align items vertically */
+    text-align: center;
+    gap: 20px;
+    /* Adds space between items */
     padding: 20px;
     border: 1px solid #ddd;
     height: 450px;
     margin-bottom: 30px;
-  
+
     .item-img {
-      width: 250px; /* Set the image width */
-      height: 350px;
-      border-radius: 8px; /* Optional: rounded corners */
-      transition: transform 0.3s ease;
-    }
-    .item-img:hover {
-        width: 250px; /* Set the image width */
+        width: 250px;
+        /* Set the image width */
         height: 350px;
-        border-radius: 8px; /* Optional: rounded corners */
+        border-radius: 8px;
+        /* Optional: rounded corners */
+        transition: transform 0.3s ease;
+    }
+
+    .item-img:hover {
+        width: 250px;
+        /* Set the image width */
+        height: 350px;
+        border-radius: 8px;
+        /* Optional: rounded corners */
         opacity: 0.8;
         transform: scale(1.1);
-      }
-  
-    .item-description {
-      flex-grow: 1; /* Allow description to take up more space */
-      font-size: 16px;
-      color: white;
-      font-family: 'Franklin Gothic Medium', Arial, sans-serif;
-text-decoration: none;
     }
-  
-    .item-price {
-      font-weight: bold;
-      font-size: 18px;
-      color: white; /* Optional: color for price */
-      font-family: monospace;
-    }
-  }
 
-  .item-link{
+    .item-description {
+        flex-grow: 1;
+        /* Allow description to take up more space */
+        font-size: 16px;
+        color: white;
+        font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+        text-decoration: none;
+    }
+
+    .item-price {
+        font-weight: bold;
+        font-size: 18px;
+        color: white;
+        /* Optional: color for price */
+        font-family: monospace;
+    }
+}
+
+.item-link {
     text-decoration: none;
-  }
+}
+
+/////////////////////////////////SELECTED ITEM SCSS////////////////////////////////////////////////////////
+
+.product-container {
+    border: 1px red solid;
+    display: grid;
+    grid-template-columns: 15% 40% 45%;
+    margin: 50px 0px 50px 0px;
+}
+
+.img-holder {
+    display: grid;
+    grid-template-rows: 22% 22% 22% 22%;
+    // border: 1px red solid;
+
+
+    .img-test {
+        border: 1px white solid;
+        // border: 1px red solid;
+        margin: 2px 0px 2px 0px;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+
+    .active-thumbnail {
+        // border: 1px black solid;
+    }
+}
+
+.image-carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px red solid;
+
+
+    .product-image {
+        height: 450px;
+        max-width: 350px; // Adjust as needed
+        border-radius: 8px;
+        transition: transform 0.3s;
+        border: 1px red solid;
+        object-fit: cover;
+
+    }
+
+    .dots-container {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+        border: 1px red solid;
+
+    }
+
+    .dot {
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background-color: #333;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .dot.active {
+        background-color: #ccc;
+    }
+}
+
+
+.product-form {
+    // max-width: 400px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding: 20px;
+
+    .product-title {
+        font-size: 1.5em;
+        font-weight: 400;
+        margin-bottom: 10px;
+    }
+
+    .price {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+
+        .current-price {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: white;
+            margin-right: 10px;
+        }
+
+        .original-price {
+            font-size: 1.2em;
+            color: #999;
+            text-decoration: line-through;
+        }
+    }
+
+    .size-label {
+        font-weight: bold;
+        display: block;
+        margin: 15px 0 5px;
+    }
+
+    .size-select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    .cart-summary {
+        display: flex;
+        justify-content: space-between;
+        margin: 15px 0;
+        font-size: 0.9em;
+        border-top: 1px solid #ddd;
+        padding-top: 10px;
+
+        p {
+            font-weight: 400;
+        }
+
+        .summary-price {
+            font-weight: bold;
+        }
+    }
+
+    .subtotal {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.3em;
+        font-weight: bold;
+        margin-top: 20px;
+        padding-top: 10px;
+        border-top: 1px solid #ddd;
+    }
+
+    .actions {
+        display: flex;
+        align-items: center;
+        margin-top: 15px;
+
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ccc;
+            background-color: #f8f8f8;
+            cursor: pointer;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quantity {
+            margin: 0 10px;
+            font-size: 1.2em;
+        }
+
+        .add-to-cart {
+            flex: 1;
+            padding: 10px;
+            margin-left: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

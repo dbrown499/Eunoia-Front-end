@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import SelectedItem from '../Components/SelectedItem.jsx';
-// import '../Styling/App.scss';
-// import { useParams } from 'react-router-dom';
+import '../Styling/ProductList.scss';
+import { useParams } from 'react-router-dom';
 // import OneItem from '../Components/OneItem';
 
-// const API = import.meta.env.VITE_API_URL;
+const API = import.meta.env.VITE_API_URL;
 
 // const Show = ({cart, setCart}) => {
 const Show = () => {
-    // const [showItem, setShowItem] = useState([])
-    // let { type } = useParams()
+    const [itemInfo, setItemInfo] = useState([])
+    let { type } = useParams()
 
-    // useEffect(() => {
-    //     fetch(`${API}/clothes/${type}`)
-    //         .then(res => res.json())
-    //         .then(res => setShowItem(sortClothesBySize(res)))
-    //         .catch(err => console.log(err))
-    // }, [type])
+    useEffect(() => {
+        fetch(`${API}/products/${type}`)
+            .then(res => res.json())
+            .then(res => setItemInfo(res))
+            .catch(err => console.log(err))
+    }, [type])
 
     // const sortClothesBySize = (arr) => {
     //     let newArr = new Array()
@@ -28,6 +28,12 @@ const Show = () => {
     //     }
     //     return newArr
     // }
+    const images = [
+        "../../assets/IMG_1629.png",
+        "../../assets/IMG_1632.png",
+        "../../assets/IMG_1631.png",  
+        "../../assets/IMG_2520.png"  // Add more images as needed
+    ];
 
     return (
         // <div>{showItem.map((oneItem) => {
@@ -36,7 +42,7 @@ const Show = () => {
         // }</div>
         <section className='selected-item'>
             <h1>Home - Store - Kiss The Moment Goodbye </h1>
-            <SelectedItem/>
+            <SelectedItem images={images} itemInfo={itemInfo}/>
         </section>
     )
 }
