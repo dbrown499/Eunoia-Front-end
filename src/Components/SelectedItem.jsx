@@ -2,13 +2,26 @@ import React, { useState } from 'react';
 
 const SelectedItem = ({ images, itemInfo }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [quantity, setQuantity] = useState(0);
 
     const handleDotClick = (index) => {
         setCurrentIndex(index);
     };
 
+
+  // Function to handle incrementing quantity
+  const incrementQuantity = () => {
+    setQuantity(prevQuantity => prevQuantity + 1);
+  };
+
+  // Function to handle decrementing quantity (ensure it doesn't go below 1)
+  const decrementQuantity = () => {
+    setQuantity(prevQuantity => (prevQuantity > 1 ? prevQuantity - 1 : 1));
+  };
+
     return (
         <>
+        
             <div className="product-container">
 
                 <section className="img-holder">
@@ -71,12 +84,12 @@ const SelectedItem = ({ images, itemInfo }) => {
                             <span>$109.00</span>
                         </div> */}
 
-                        <div className="actions">
-                            <button className="quantity-btn">-</button>
-                            <span className="quantity">1</span>
-                            <button className="quantity-btn">+</button>
-                            <button className="add-to-cart">Add to cart</button>
-                        </div>
+<div className="actions">
+      <button className="quantity-btn" onClick={decrementQuantity}>-</button>
+      <span className="quantity">{quantity}</span>
+      <button className="quantity-btn" onClick={incrementQuantity}>+</button>
+      <button className="add-to-cart">Add to cart</button>
+    </div>
                     </div>
 
                 </section>

@@ -1,44 +1,57 @@
-.gg-shopping-cart {
-    margin-left: 10%;
-    color: white;
-    // border: solid 1px green;
-    display: block;
-    box-sizing: border-box;
-    position: relative;
-    // transform: scale(var(--ggs, 1));
-    width: 25px;
-    height: 25px;
-    background:
-    linear-gradient(to left, currentColor 12px,
-    transparent 0) no-repeat -1px 7px/18px 2px,
-    linear-gradient(to left, currentColor 12px,
-    transparent 0) no-repeat 6px 16px/11px 2px,
-    linear-gradient(to left, currentColor 12px,
-    transparent 0) no-repeat 0 2px/4px 2px,
-    radial-gradient(circle, currentColor 60%,
-    transparent 40%) no-repeat 14.5px 19px/4px 4px,
-    radial-gradient(circle, currentColor 60%,
-    transparent 40%) no-repeat 5.5px 19px/4px 4px;
-    cursor: pointer;
+.cart-quantity {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 50% 50%;
+    padding-top: 15px;
+    // border: solid red 1px;
+
+
+    .quantity-number {
+        height: 35px;
+        font-family: sans Arial, Helvetica, sans-serif;
+        font-size: 12pt;
+        // border: solid red 1px;
+    }
+
+    .gg-shopping-cart {
+        // border: solid red 1px;
+        // margin-left: 10%;
+        color: white;
+        display: block;
+        box-sizing: border-box;
+        position: relative;
+        width: 30px;
+        height: 45px;
+        background:
+            linear-gradient(to left, currentColor 100px, transparent 0) no-repeat 1px 6px/22px 2px,
+            linear-gradient(to left, currentColor 100px, transparent 0) no-repeat 3px 20px/17px 2px,
+            linear-gradient(to left, currentColor 100px, transparent 0) no-repeat -5px 2px/4px 2px,
+            radial-gradient(circle, currentColor 60%, transparent 40%) no-repeat 14.5px 25px/4px 5px,
+            radial-gradient(circle, currentColor 60%, transparent 40%) no-repeat 3.5px 25px/4px 5px;
+        cursor: pointer;
+        transform: scaleX(-1); /* Flips the icon horizontally */
+    }
+    
+    .gg-shopping-cart::after,
+    .gg-shopping-cart::before {
+        content: "";
+        display: block;
+        position: absolute;
+        box-sizing: border-box;
+        width: 2px;
+        height: 20px;
+        background: currentColor;
+        top: 2px;
+        left: 0px;
+        transform: skew(12deg);
+    }
+    
+    .gg-shopping-cart::after {
+        height: 15px;
+        top: 6px;
+        left: 20px;
+        transform: skew(-12deg);
+    }
 }
 
-.gg-shopping-cart::after,
-.gg-shopping-cart::before {
-    content: "";
-    display: block;
-    position: absolute;
-    box-sizing: border-box;
-    width: 2px;
-    height: 16px;
-    background: currentColor;
-    top: 2px;
-    left: 4px;
-    transform: skew(12deg)
-}
 
-.gg-shopping-cart::after {
-    height: 12px;
-    top: 6px;
-    left: 18px;
-    transform: skew(-12deg)
-}

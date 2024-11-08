@@ -9,9 +9,11 @@ import Show from './Pages/Show'
 import Cart from './Pages/Cart'
 
 import ContactInfo from './Components/ContactInfo'
+import ShoppingCartIcon from './Components/ShoppingCartIcon';
 
 function App() {
   const [cart, setCart] = useState({totalItems: 0, pieces: []})
+ 
 
   return (
     <>

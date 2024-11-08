@@ -28,8 +28,8 @@ const ProductList = () => {
     
     const groupedProductsArray = Object.values(sortedProducts);
     
-    console.log(sortedProducts); // Object with each product type as keys
-    console.log(groupedProductsArray); // Array of subarrays, one for each type
+    // console.log(sortedProducts); // Object with each product type as keys
+    // console.log(groupedProductsArray); // Array of subarrays, one for each type
     
 
     return (

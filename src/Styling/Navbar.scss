@@ -1,6 +1,6 @@
 .nav {
     padding: 20px 20px;
-    border: solid red 1px;
+    // border: solid red 1px;
     display: grid;
     place-items: center; /* centers both vertically and horizontally */
     grid-template-columns: 33% 33% 33%;
@@ -9,7 +9,7 @@
 
 
 .web_name {
-    border: solid red 1px ;
+    // border: solid red 1px ;
     font-size: 30pt;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: white;
@@ -17,7 +17,7 @@
 }
 
 .login {
-    border: solid red 1px;
+    // border: solid red 1px;
     font-family: sans Arial, Helvetica, sans-serif;
     letter-spacing: 1.5px;
     text-decoration: none;
@@ -26,15 +26,20 @@
 
 }
 
-// .cart {
-//     border: solid red 1px;
-// //     font-family: sans Arial, Helvetica, sans-serif;
-// //     display: flex;
-// //     align-items: center;
-// //     text-decoration: none;
-// //     color: white;
-// // margin-top: 25px;
-// }
+.cart {
+    text-decoration: none;
+    color: white;
+    // border: solid red 1px;
+}
+
+.render {
+    // border: solid red 1px;
+    display: flex; /* Sets children in a row */
+    align-items: center; /* Vertically aligns items */
+    gap: 20px;
+    text-align: right;
+    margin-left: 140px;
+}
 
 .shop-now {
     border: solid rgb(175, 175, 175) 1px;
