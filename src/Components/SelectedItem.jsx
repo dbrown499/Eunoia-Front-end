@@ -1,27 +1,61 @@
 import React, { useState } from 'react';
 
-const SelectedItem = ({ images, itemInfo }) => {
+const SelectedItem = ({ images, itemInfo, cart, setCart }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [quantity, setQuantity] = useState(0);
+    const [size, setSize] = useState('');
+
 
     const handleDotClick = (index) => {
         setCurrentIndex(index);
     };
 
+    const incrementQuantity = () => {
+        setQuantity(prevQuantity => prevQuantity + 1);
+    };
 
-  // Function to handle incrementing quantity
-  const incrementQuantity = () => {
-    setQuantity(prevQuantity => prevQuantity + 1);
-  };
+    const decrementQuantity = () => {
+        setQuantity(prevQuantity => (prevQuantity > 0 ? prevQuantity - 1 : 0));
+    };
 
-  // Function to handle decrementing quantity (ensure it doesn't go below 1)
-  const decrementQuantity = () => {
-    setQuantity(prevQuantity => (prevQuantity > 1 ? prevQuantity - 1 : 1));
-  };
+    const handleSizeChange = (e) => {
+        setSize(e.target.value);
+    };
+
+    // const handleAddToCart = () => {
+
+    //     if (!size) {
+    //         alert('Please select a size before adding to cart');
+    //         return;
+    //     }
+    //     const newCart = [...cart.pieces]
+
+    //     for (let i = 0; i < itemInfo; i++) {
+    //         if (itemInfo[i].size) {
+    //             newCart.push(itemInfo[i]);
+    //         }
+    //     }
+    //     setCart({ totalItems: parseInt(cart.totalItems) + parseInt(quantity), pieces: newCart })
+    // };
+
+    const handleAddToCart = () => {
+        if (!size) {
+            alert('Please select a size before adding to cart');
+            return;
+        }
+
+        const newCartItems = Array(quantity).fill({ ...itemInfo[0], size });
+        setCart({
+            totalItems: cart.totalItems + quantity,
+            pieces: [...cart.pieces, ...newCartItems],
+        });
+    }
+
+    console.log(cart)
 
     return (
         <>
-        
+
             <div className="product-container">
 
                 <section className="img-holder">
@@ -55,41 +89,36 @@ const SelectedItem = ({ images, itemInfo }) => {
 
                 <section>
                     <div className="product-form">
-                    {itemInfo && itemInfo[0] && <h1 className="product-title">{itemInfo[0].name} <br /> {itemInfo[0].description}</h1>}
+                        {itemInfo && itemInfo[0] && <h1 className="product-title">{itemInfo[0].name} <br /> {itemInfo[0].description}</h1>}
 
 
                         <div className="price">
-                        {itemInfo && itemInfo[0] && <span className="current-price">${itemInfo[0].price}</span>}
+                            {itemInfo && itemInfo[0] && <span className="current-price">${itemInfo[0].price}</span>}
                             <span className="original-price">$159.00</span>
                         </div>
 
                         <label htmlFor="size" className="size-label">Size *</label>
-                        <select id="size" className="size-select">
-                            <option>Select an option...</option>
-                            <option>Extra Small</option>
-                            <option>Small</option>
-                            <option>Medium</option>
-                            <option>Large</option>
-                            <option>X-Large</option>
-                            <option>2X-Large</option>
+                        <select
+                            id="size"
+                            className="size-select"
+                            value={size}
+                            onChange={handleSizeChange}
+                        >
+                            <option value="">Select an option...</option>
+                            <option value="Extra Small">Extra Small</option>
+                            <option value="Small">Small</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Large">Large</option>
+                            <option value="X-Large">X-Large</option>
+                            <option value="2X-Large">2X-Large</option>
                         </select>
 
-                        {/* <div className="cart-summary">
-                            <p>1x Kanye West Donda Atlanta Listening Event L/S T shirt Cream</p>
-                            <span className="summary-price">$109.00</span>
-                        </div> */}
-{/* 
-                        <div className="subtotal">
-                            <span>Subtotal</span>
-                            <span>$109.00</span>
-                        </div> */}
-
-<div className="actions">
-      <button className="quantity-btn" onClick={decrementQuantity}>-</button>
-      <span className="quantity">{quantity}</span>
-      <button className="quantity-btn" onClick={incrementQuantity}>+</button>
-      <button className="add-to-cart">Add to cart</button>
-    </div>
+                        <div className="actions">
+                            <button className="quantity-btn" onClick={decrementQuantity}>-</button>
+                            <span className="quantity">{quantity}</span>
+                            <button className="quantity-btn" onClick={incrementQuantity}>+</button>
+                            <button className="add-to-cart" onClick={handleAddToCart}>Add to cart</button>
+                        </div>
                     </div>
 
                 </section>

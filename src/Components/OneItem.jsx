@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import Navbar from './Navbar';
 
 const OneItem = ({ eachItem, cart, setCart}) => {
-    const [quantity, setQuantity] = useState(0);
+    // const [quantity, setQuantity] = useState(0);
     // let { type } = useParams();
 
     const handleQuantityChange = (e) => {

@@ -1,10 +1,10 @@
 import React from 'react'
 import '../Styling/ShoppingCartIcon.scss'
 
-const ShoppingCartIcon = () => {
+const ShoppingCartIcon = ({ quantity }) => {
     return (
         <section className='cart-quantity'>
-            <p className='quantity-number'>0</p>
+            <p className='quantity-number'>{`${quantity}`}</p>
             <i className="gg-shopping-cart"></i>
         </section>
 

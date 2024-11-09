@@ -7,8 +7,8 @@ import Breadcrumb from '../Components/Breadcrumbs.jsx';
 
 const API = import.meta.env.VITE_API_URL;
 
-// const Show = ({cart, setCart}) => {
-const Show = () => {
+const Show = ({cart, setCart}) => {
+// const Show = () => {
     const [itemInfo, setItemInfo] = useState([]);
     let { type } = useParams();
 
@@ -43,7 +43,7 @@ const Show = () => {
         // }</div>
         <section className='selected-item'>
             <Breadcrumb/>
-            <SelectedItem images={images} itemInfo={itemInfo}/>
+            <SelectedItem key={itemInfo.id} images={images} itemInfo={itemInfo} cart={cart} setCart={setCart}/>
         </section>
     )
 }

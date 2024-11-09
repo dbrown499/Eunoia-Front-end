@@ -12,14 +12,13 @@ const Navbar = ({ quantity }) => {
   useEffect(() => {
     // Check if the current path is '/products'
     setSelectedItem(location.pathname === '/products/Sweater');
-    console.log(location)
   }, [location]);
 
+  // console.log(quantity)
   // const [cart, setCart] = useState([])
   // console.log(number )
   return (
     <nav className='nav'>
-      {/* <ShoppingCartIcon/> */}
       <HamburgerMenu className='burger-menu' />
       <h2 className='web_name-holder'>
         <Link to={'/'} className='web_name'>œunöia*</Link>
@@ -28,7 +27,7 @@ const Navbar = ({ quantity }) => {
         {isSelectedItem ? (
           <div className='render'>
             {/* <Link to={'/clothes/cart'} className='cart'>{`CART (${quantity})`}</Link> */}
-            <Link to={'/products/cart'} className='cart'>{<ShoppingCartIcon />}
+            <Link to={'/products/cart'} className='cart'>{<ShoppingCartIcon quantity={quantity}/>}
             </Link>
             <Link className='shop-now' to={'/products'}>SHOP NOW</Link>
           </div>
