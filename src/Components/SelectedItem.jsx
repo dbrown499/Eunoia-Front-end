@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../Styling/ProductList.scss';
 
 const SelectedItem = ({ images, itemInfo, cart, setCart }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -22,22 +23,6 @@ const SelectedItem = ({ images, itemInfo, cart, setCart }) => {
         setSize(e.target.value);
     };
 
-    // const handleAddToCart = () => {
-
-    //     if (!size) {
-    //         alert('Please select a size before adding to cart');
-    //         return;
-    //     }
-    //     const newCart = [...cart.pieces]
-
-    //     for (let i = 0; i < itemInfo; i++) {
-    //         if (itemInfo[i].size) {
-    //             newCart.push(itemInfo[i]);
-    //         }
-    //     }
-    //     setCart({ totalItems: parseInt(cart.totalItems) + parseInt(quantity), pieces: newCart })
-    // };
-
     const handleAddToCart = () => {
         if (!size) {
             alert('Please select a size before adding to cart');
@@ -49,9 +34,9 @@ const SelectedItem = ({ images, itemInfo, cart, setCart }) => {
             totalItems: cart.totalItems + quantity,
             pieces: [...cart.pieces, ...newCartItems],
         });
+        alert("Item has been added to your cart!");
+        return;
     }
-
-    console.log(cart)
 
     return (
         <>
@@ -117,6 +102,7 @@ const SelectedItem = ({ images, itemInfo, cart, setCart }) => {
                             <button className="quantity-btn" onClick={decrementQuantity}>-</button>
                             <span className="quantity">{quantity}</span>
                             <button className="quantity-btn" onClick={incrementQuantity}>+</button>
+                            {/* <div id="cart-alert" class="cart-alert">Item has been added to your cart!</div> */}
                             <button className="add-to-cart" onClick={handleAddToCart}>Add to cart</button>
                         </div>
                     </div>

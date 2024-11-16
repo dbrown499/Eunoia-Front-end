@@ -311,3 +311,26 @@ margin-left: 30px;
         }
     }
 }
+
+// src/CartAlert.scss
+.cart-alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4caf50;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
+    &.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  

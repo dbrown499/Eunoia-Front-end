@@ -19,6 +19,8 @@ const Show = ({cart, setCart}) => {
             .catch(err => console.log(err))
     }, [type]);
 
+    // console.log(itemInfo)
+
     // const sortClothesBySize = (arr) => {
     //     let newArr = new Array()
 
@@ -30,7 +32,7 @@ const Show = ({cart, setCart}) => {
     //     return newArr
     // }
     const images = [
-        "../../assets/IMG_1629.png",
+        "../../assets/D1F5312F-C63B-41DF-B241-7D81D44676E9.png",
         "../../assets/IMG_1632.png",
         "../../assets/IMG_1631.png",  
         "../../assets/IMG_2520.png"  // Add more images as needed

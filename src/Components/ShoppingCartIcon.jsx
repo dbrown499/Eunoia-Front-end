@@ -4,7 +4,7 @@ import '../Styling/ShoppingCartIcon.scss'
 const ShoppingCartIcon = ({ quantity }) => {
     return (
         <section className='cart-quantity'>
-            <p className='quantity-number'>{`${quantity}`}</p>
+            <span className='quantity-number'>{`${quantity}`}</span>
             <i className="gg-shopping-cart"></i>
         </section>
 

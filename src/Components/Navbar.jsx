@@ -23,7 +23,7 @@ const Navbar = ({ quantity }) => {
       <h2 className='web_name-holder'>
         <Link to={'/'} className='web_name'>œunöia*</Link>
       </h2>
-      <p>
+      <div>
         {isSelectedItem ? (
           <div className='render'>
             {/* <Link to={'/clothes/cart'} className='cart'>{`CART (${quantity})`}</Link> */}
@@ -38,7 +38,7 @@ const Navbar = ({ quantity }) => {
             <Link className='shop-now' to={'/products'}>SHOP NOW</Link>
           </>
         )}
-      </p>
+      </div>
     </nav>
   )
 }
