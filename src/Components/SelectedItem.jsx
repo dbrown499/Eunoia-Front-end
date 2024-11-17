@@ -24,12 +24,16 @@ const SelectedItem = ({ images, itemInfo, cart, setCart }) => {
     };
 
     const handleAddToCart = () => {
-        if (!size) {
-            alert('Please select a size before adding to cart');
+        if (!quantity) {
+            alert('Please select a size and quantity before adding to cart');
+            return;
+        }else if(!size){
+            alert('Please select a size and quantity before adding to cart');
             return;
         }
 
         const newCartItems = Array(quantity).fill({ ...itemInfo[0], size });
+        console.log(cart.pieces)
         setCart({
             totalItems: cart.totalItems + quantity,
             pieces: [...cart.pieces, ...newCartItems],
@@ -78,8 +82,8 @@ const SelectedItem = ({ images, itemInfo, cart, setCart }) => {
 
 
                         <div className="price">
-                            {itemInfo && itemInfo[0] && <span className="current-price">${itemInfo[0].price}</span>}
-                            <span className="original-price">$159.00</span>
+                            {itemInfo && itemInfo[0] && <span className="current-price">${itemInfo[0].price.toFixed(2)}</span>}
+                            <span className="original-price">$156.25</span>
                         </div>
 
                         <label htmlFor="size" className="size-label">Size *</label>

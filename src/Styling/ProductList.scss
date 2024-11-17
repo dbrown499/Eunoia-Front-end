@@ -69,6 +69,22 @@
         text-decoration: none;
     }
 
+    .price {
+        // border: red solid 1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .item-original-price {
+        text-decoration: line-through;
+        color: #777;
+        font-family: monospace;
+        font-size: 16px;
+
+    }
+
     .item-price {
         font-weight: bold;
         font-size: 18px;
@@ -86,45 +102,49 @@
 
 nav[aria-label="breadcrumb"] {
     ol {
-margin-left: 30px;
+        margin-left: 30px;
         font-size: 12pt;
         // border: 1px red solid;
-      display: flex;
-      gap: 8px;
-      list-style: none;
-      padding: 0;
-    //   color: #555; /* Color for breadcrumb text */
+        display: flex;
+        gap: 8px;
+        list-style: none;
+        padding: 0;
+        //   color: #555; /* Color for breadcrumb text */
     }
-  
+
     li {
         // border: 1px red solid;
 
-      display: flex;
-      align-items: center;
-  
-      &:not(:last-child)::after {
-        content: '>'; /* Separator arrow */
-        margin: 0 8px;
-        color: #888; /* Color for the separator */
-      }
+        display: flex;
+        align-items: center;
+
+        &:not(:last-child)::after {
+            content: '>';
+            /* Separator arrow */
+            margin: 0 8px;
+            color: #888;
+            /* Color for the separator */
+        }
     }
-  
+
     a {
-      color: #ffffff; /* Color for breadcrumb links */
-      text-decoration: none;
-  
-      &:hover {
-        text-decoration: underline;
-      }
+        color: #ffffff;
+        /* Color for breadcrumb links */
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
-  
+
     /* Optional: Style for the current (last) breadcrumb item */
     span {
-      font-weight: bold;
-      color: #ffffff; /* Color for the last item */
+        font-weight: bold;
+        color: #ffffff;
+        /* Color for the last item */
     }
-  }
-  
+}
+
 
 .product-container {
     // border: 1px red solid;
@@ -143,8 +163,8 @@ margin-left: 30px;
         border: 1px white solid;
         // border: 1px red solid;
         margin: 2px 0px 2px 0px;
-        width: 100px;
-        height: 100px;
+        width: 55%;
+        height: 95%;
         object-fit: cover;
     }
 
@@ -161,7 +181,7 @@ margin-left: 30px;
 
 
     .product-image {
-        height: 450px;
+        height: 75%;
         max-width: 350px; // Adjust as needed
         border-radius: 8px;
         transition: transform 0.3s;
@@ -326,11 +346,9 @@ margin-left: 30px;
     transform: translateX(100%);
     transition: opacity 0.3s ease, transform 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  
-    &.show {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
 
-  
+    &.show {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../Styling/Cart.scss';
+import SweaterPic from '../../assets/D1F5312F-C63B-41DF-B241-7D81D44676E9.png'
 
 const Cart = ({ cart, setCart }) => {
 
@@ -12,6 +14,28 @@ const Cart = ({ cart, setCart }) => {
 
     return acc;
   }, {});
+
+  const totalDiscount = cart.pieces.reduce(
+    (acc, item) => acc + 156.25 * 0.2,
+    0
+  );
+
+  /*
+  const totalTaxes = cart.pieces.reduce(
+    (acc, item) => acc + 10,
+    0
+    );
+  */ 
+
+    const totalTaxes = cart.pieces.reduce(
+      (acc, item) => acc + 10,
+      0
+      );
+
+  const totalPrice = cart.pieces.reduce(
+    (acc, item) => acc + 156.25 * 0.8 + 10, 0
+  );
+  
 
   const handleIncrement = (newItem) => {
     setCart((prevCart) => ({
@@ -61,12 +85,12 @@ const result = prevCart.pieces.map(item => {
         {Object.entries(sizeCounts).map(([size, itemsForSize]) => (
 
           <div key={size} className="cart-item">
-            <img src={itemsForSize[0].image_url} alt={itemsForSize[0].name} className="item-image" />
+            <img src={SweaterPic} alt={itemsForSize[0].name} className="item-image" />
             <div className="item-details">
               <p className="item-description">{itemsForSize[0].description}</p>
               <h3 className="item-name">{itemsForSize[0].name}</h3>
               <p className="item-prices">
-                <span className="original-price">$159.00</span>
+                <span className="original-price">$156.25</span>
                 <span className="sale-price">${itemsForSize[0].price}</span>
               </p>
               <p className="item-final-sale">Final Sale</p>
@@ -84,17 +108,20 @@ const result = prevCart.pieces.map(item => {
       <div className="cart-summary">
         <p className="summary-line">
           <span>Total Discount:</span>
-          <span>$12.00</span>
-          {/* <span>${totalDiscount.toFixed(2)}</span> */}
+          <span>${totalDiscount.toFixed(2)}</span>
+        </p>
+        <p className="summary-line">
+          <span>Shipping & Handling:</span>
+          <span>${totalTaxes.toFixed(2)}</span>
         </p>
         <p className="summary-line">
           <span>Total:</span>
-          <span>$150</span>
-          {/* <span>${totalPrice.toFixed(2)}</span> */}
+          <span>${totalPrice.toFixed(2)}</span>
         </p>
         <button className="checkout-button">CHECKOUT</button>
       </div>
-      <a href="/" className="continue-shopping">continue shopping →</a>
+      <Link to='/products' className="continue-shopping">continue shopping →
+      </Link>
     </div>
   );
 };

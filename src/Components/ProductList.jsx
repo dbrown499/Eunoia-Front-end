@@ -48,7 +48,10 @@ const ProductList = () => {
                                  {sect[0].description}
                              </p>
                          </Link>
-                         <p className='item-price'>${sect[0].price}</p>
+                         <div className='price'>
+                         <p className='item-original-price'>$156.25</p>
+                         <p className='item-price'>${sect[0].price.toFixed(2)}</p>
+                         </div>
                      </section>
                 </div>
             ))}
