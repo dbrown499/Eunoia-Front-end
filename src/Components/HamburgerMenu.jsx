@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import React from 'react'
-import '../Styling/HamburgerMenu.scss'
+import '../Styling/Navbar.scss'
 
 const HamburgerMenu = () => {
     const [isOpen, setIsOpen] = useState(false);

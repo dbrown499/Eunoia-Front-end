@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
-import '../Styling/ProductList.scss';
+import '../Styling/Index.scss';
 
 const API = import.meta.env.VITE_API_URL;
 
@@ -28,10 +28,6 @@ const ProductList = () => {
     
     const groupedProductsArray = Object.values(sortedProducts);
     
-    // console.log(sortedProducts); // Object with each product type as keys
-    // console.log(groupedProductsArray); // Array of subarrays, one for each type
-    
-
     return (
         <section className='items-container'>
             {groupedProductsArray.map((sect, groupIndex) => (

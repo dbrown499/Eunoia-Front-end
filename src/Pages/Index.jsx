@@ -1,7 +1,6 @@
 import React from 'react';
 import ProductList from "../Components/ProductList"
 import '../Styling/Index.scss'
-// import Item from '../Components/Item';
 
 
 const Index = () => {

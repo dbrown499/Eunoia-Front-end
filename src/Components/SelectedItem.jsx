@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../Styling/ProductList.scss';
+import '../Styling/Show.scss';
 
 const SelectedItem = ({ images, itemInfo, cart, setCart }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -106,7 +106,6 @@ const SelectedItem = ({ images, itemInfo, cart, setCart }) => {
                             <button className="quantity-btn" onClick={decrementQuantity}>-</button>
                             <span className="quantity">{quantity}</span>
                             <button className="quantity-btn" onClick={incrementQuantity}>+</button>
-                            {/* <div id="cart-alert" class="cart-alert">Item has been added to your cart!</div> */}
                             <button className="add-to-cart" onClick={handleAddToCart}>Add to cart</button>
                         </div>
                     </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import '../Styling/ProductList.scss';
+import '../Styling/Show.scss';
 
 
 const Breadcrumb = () => {
@@ -28,9 +28,7 @@ const Breadcrumb = () => {
                                 <span>{capitalizeFirstLetter(value)}</span>
                             ) : (
                                 <>
-                                    {/* <span> &gt; </span> */}
                                     <Link to={to}>{capitalizeFirstLetter(value)}</Link>
-                                    {/* <span> &gt; </span> */}
                                 </>
                             )}
                         </li>

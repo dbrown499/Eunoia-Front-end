@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Styling/ShoppingCartIcon.scss'
+import '../Styling/Navbar.scss'
 
 const ShoppingCartIcon = ({ quantity }) => {
     return (

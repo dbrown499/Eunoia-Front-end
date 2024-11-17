@@ -6,17 +6,13 @@ import SelectedItem from './SelectedItem';
 import '../Styling/Navbar.scss'
 
 const Navbar = ({ quantity }) => {
-  const location = useLocation();  // Gets the current route
+  const location = useLocation(); 
   const [isSelectedItem, setSelectedItem] = useState(false);
 
   useEffect(() => {
-    // Check if the current path is '/products'
     setSelectedItem(location.pathname === '/products/Sweater');
   }, [location]);
 
-  // console.log(quantity)
-  // const [cart, setCart] = useState([])
-  // console.log(number )
   return (
     <nav className='nav'>
       <HamburgerMenu className='burger-menu' />
@@ -26,7 +22,6 @@ const Navbar = ({ quantity }) => {
       <div>
         {isSelectedItem ? (
           <div className='render'>
-            {/* <Link to={'/clothes/cart'} className='cart'>{`CART (${quantity})`}</Link> */}
             <Link to={'/products/cart'} className='cart'>{<ShoppingCartIcon quantity={quantity}/>}
             </Link>
             <Link className='shop-now' to={'/products'}>SHOP NOW</Link>
@@ -44,12 +39,3 @@ const Navbar = ({ quantity }) => {
 }
 
 export default Navbar
-{/* <ShoppingCartIcon/>  */ }
-{/* <Link className='login'>LOGIN / REGISTER</Link>
-      <Link className='shop-now' to={'/products'}>SHOP NOW</Link> */}
-{/* <p> */ }
-{/* <Link to={'/clothes/cart'} className='cart'>{`CART (${quantity})`}</Link> */ }
-{/* </p> */ }
-{/* <button className='join_button'> */ }
-{/* </button> */ }
-{/* </div> */ }
