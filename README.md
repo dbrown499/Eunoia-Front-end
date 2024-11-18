@@ -65,12 +65,12 @@ Let’s make Eunoia even better together!
 
 ---
 
-❤️ Acknowledgments
+## ❤️ Acknowledgments
 -To my brother, for inspiring this journey and bringing his clothing brand to life.
 -To the tech community, for all the shared knowledge that made this project possible.
 
 ---
 
-📩 Contact
+## 📩 Contact
 Have questions or just want to connect? Reach out to me on [LinkedIn](https://www.linkedin.com/in/diamond-brown-8305642a1/).
 
