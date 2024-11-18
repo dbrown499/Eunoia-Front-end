@@ -66,8 +66,8 @@ Let’s make Eunoia even better together!
 ---
 
 ## ❤️ Acknowledgments
-- **To my brother, for inspiring this journey and bringing his clothing brand to life.
-- **To the tech community, for all the shared knowledge that made this project possible.
+- To my brother, for inspiring this journey and bringing his clothing brand to life.
+- To the tech community, for all the shared knowledge that made this project possible.
 
 ---
 
