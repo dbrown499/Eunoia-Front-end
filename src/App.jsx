@@ -24,7 +24,7 @@ function App() {
       <Route path='/products' element={<Index />}/>
       <Route path='/products/:type' element={<Show cart={cart} setCart={setCart}/>}/>
       <Route path='/products/cart' element={<Cart  quantity={cart.totalItems} items={cart.pieces} cart={cart} setCart={setCart}/>}/> 
-        {/* <Route path=''element={}/>  */}
+      {/* <Route path='/payment' element={<Payment/>}/>  */}
       </Routes>
     </main>
    
