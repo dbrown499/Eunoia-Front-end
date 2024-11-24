@@ -158,12 +158,22 @@ nav[aria-label="breadcrumb"] {
 
     .size-select {
         width: 100%;
-        padding: 10px;
-        border: 1px solid #ffffff;
-        border-radius: 4px;
+        padding: 15px;
+        border: 1px solid white;
+        background-color: black;
+        color: white;
+        // border-radius: 4px;
         font-size: 1em;
         margin-bottom: 20px;
     }
+    // .size-select {
+    //     width: 100%;
+    //     padding: 10px;
+    //     border: 1px solid #ffffff;
+    //     border-radius: 4px;
+    //     font-size: 1em;
+    //     margin-bottom: 20px;
+    // }
 
     .cart-summary {
         display: flex;
@@ -200,9 +210,10 @@ nav[aria-label="breadcrumb"] {
         .quantity-btn {
             width: 30px;
             height: 30px;
-            border: 1px solid black;
-            border-radius: 50%;
-            background-color: white;
+            border: 1px solid white;
+            // border-radius: 50%;
+            background-color: black;
+            color:white;
             cursor: pointer;
             font-size: 1.2em;
             display: flex;

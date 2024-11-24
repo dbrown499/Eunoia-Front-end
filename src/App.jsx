@@ -1,15 +1,15 @@
-import React, { useState} from 'react'
+import React, { useState} from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import './App.scss'
+import './App.scss';
 
-import Navbar from './Components/Navbar'
-import Home from "./Pages/Home"
-import Index from "./Pages/Index"
-import Show from './Pages/Show'
-import Cart from './Pages/Cart'
+import Navbar from './Components/Navbar';
+import Home from "./Pages/Home";
+import Index from "./Pages/Index";
+import Show from './Pages/Show';
+import Cart from './Pages/Cart';
+import UpdateDatabase from './Pages/UpdateDatabase';
 
 import ContactInfo from './Components/ContactInfo'
-import ShoppingCartIcon from './Components/ShoppingCartIcon';
 
 function App() {
   const [cart, setCart] = useState({totalItems: 0, pieces: []});
@@ -24,7 +24,7 @@ function App() {
       <Route path='/products' element={<Index />}/>
       <Route path='/products/:type' element={<Show cart={cart} setCart={setCart}/>}/>
       <Route path='/products/cart' element={<Cart  quantity={cart.totalItems} items={cart.pieces} cart={cart} setCart={setCart}/>}/> 
-      {/* <Route path='/payment' element={<Payment/>}/>  */}
+      <Route path='/billing-details' element={<UpdateDatabase/>}/> 
       </Routes>
     </main>
    

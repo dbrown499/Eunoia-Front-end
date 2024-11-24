@@ -118,7 +118,9 @@ const result = prevCart.pieces.map(item => {
           <span>Total:</span>
           <span>${totalPrice.toFixed(2)}</span>
         </p>
+        <Link to='/billing-details'>
         <button className="checkout-button">CHECKOUT</button>
+        </Link>
       </div>
       <Link to='/products' className="continue-shopping">continue shopping →
       </Link>
