@@ -169,3 +169,13 @@
         }
     }
 }
+
+@media only screen and  (max-width:  1215px){
+    .item-image {
+        // display: none;
+        width: 20px;
+        height: 20px;
+        // object-fit: cover;
+    }
+}
+

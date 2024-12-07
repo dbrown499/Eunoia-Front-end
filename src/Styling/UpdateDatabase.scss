@@ -95,4 +95,24 @@
   }
   
 
+
 ///////////////////////////////PAYMENT DETAILS ///////////////////////////////////////////////
+.error {
+  color: red;
+}
+
+@media only screen and  (max-width:  1215px){
+  * {
+    // border: red solid 1px;
+  }
+  .payment-form-container {
+    font-family: Arial, sans-serif;
+      max-width: 370px;
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+}

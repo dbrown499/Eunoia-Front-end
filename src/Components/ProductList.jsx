@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import '../Styling/Index.scss';
+import Sweater from '../../assets/D1F5312F-C63B-41DF-B241-7D81D44676E9.png' 
 
 const API = import.meta.env.VITE_API_URL;
 
@@ -25,32 +26,56 @@ const ProductList = () => {
         
         return acc;
     }, {});
+
+    // console.log(sortedProducts)
     
     const groupedProductsArray = Object.values(sortedProducts);
     
+    // console.log(groupedProductsArray)
+    
     return (
+        // <section className='items-container'>
+        //     {groupedProductsArray.map((sect, groupIndex) => (
+        //         <div className='product-group' key={groupIndex}>
+        //                  <section className='item-section' key={groupIndex}>
+        //                  <Link to={`/products/${sect[0].type}`} className="item-link">
+        //                      <img 
+        //                          className='item-img'
+        //                          src={sect[0].type === 'Sweater' ? "../../assets/D1F5312F-C63B-41DF-B241-7D81D44676E9.png" : "assets/0521152011_664c3d1bdbbc2.jpg"} 
+        //                          alt={`${sect[0].type} photo`} 
+        //                      />
+        //                      <p className='item-description'>
+        //                          {sect[0].name}<br />
+        //                          {sect[0].description}
+        //                      </p>
+        //                  </Link>
+        //                  <div className='price'>
+        //                  <p className='item-original-price'>$156.25</p>
+        //                  <p className='item-price'>${sect[0].price.toFixed(2)}</p>
+        //                  </div>
+        //              </section>
+        //         </div>
+        //     ))}
+        // </section>
         <section className='items-container'>
-            {groupedProductsArray.map((sect, groupIndex) => (
-                <div className='product-group' key={groupIndex}>
-                         <section className='item-section' key={groupIndex}>
-                         <Link to={`/products/${sect[0].type}`} className="item-link">
+                <div className='product-group' >
+                         <section className='item-section' >
+                         <Link to={`/products/Sweater`} className="item-link">
                              <img 
                                  className='item-img'
-                                 src={sect[0].type === 'Sweater' ? "assets/D1F5312F-C63B-41DF-B241-7D81D44676E9.png" : "assets/0521152011_664c3d1bdbbc2.jpg"} 
-                                 alt={`${sect[0].type} photo`} 
+                                 src="../../assets/D1F5312F-C63B-41DF-B241-7D81D44676E9.png" 
                              />
                              <p className='item-description'>
-                                 {sect[0].name}<br />
-                                 {sect[0].description}
+                                 Kiss The Moment Good Bye<br />
+                                 Cropped Hoodie
                              </p>
                          </Link>
                          <div className='price'>
                          <p className='item-original-price'>$156.25</p>
-                         <p className='item-price'>${sect[0].price.toFixed(2)}</p>
+                         <p className='item-price'>$125.00</p>
                          </div>
                      </section>
                 </div>
-            ))}
         </section>
     );
 }    
