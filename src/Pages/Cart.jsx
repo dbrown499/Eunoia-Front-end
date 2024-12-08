@@ -124,7 +124,26 @@ const Cart = ({ cart, setCart }) => {
         const results = await Promise.all(orderItemsRequests);
         console.log('All items added:', results);
 
-        // Step 3: Navigate to billing details page
+        //step 3: Add pricing to payment table
+        const paymentResponse = await fetch(`${API}/payments`, {
+          method: 'POST',
+          body: JSON.stringify({
+              order_id: orderId,
+              payment_method: "unknown",
+              amount: Number(totalPrice),
+              payment_status: "unknown"
+          }),
+          headers: {
+              'Content-Type': 'application/json'
+          }
+      });
+
+      if (!paymentResponse.ok) {
+          throw new Error('Failed to create payment');
+      }
+
+
+        // Step 4: Navigate to billing details page
         navigate(`/billing-details/${orderData.newOrder.order_id}`);
         
     } catch (error) {

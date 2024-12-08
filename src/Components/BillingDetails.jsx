@@ -41,85 +41,86 @@ const BillingDetails = () => {
             setError('Stripe has not loaded correctly. Please refresh and try again.');
             setIsProcessing(false);
             return;
-        };
+        }
+    
         const cardElement = elements.getElement(CardElement);
-
+    
         // Create payment method
         const { error: paymentMethodError, paymentMethod } = await stripe.createPaymentMethod({
             type: 'card',
             card: cardElement,
         });
-
+    
         if (paymentMethodError) {
             setError(paymentMethodError.message);
             setIsProcessing(false);
             return;
-        };
-
+        }
+    
         try {
+            // Submit billing details
             const response = await fetch(`${API}/billing-details`, {
                 method: 'POST',
                 body: JSON.stringify(billingEntry),
                 headers: {
-                    'Content-Type': 'application/json'
-                }
+                    'Content-Type': 'application/json',
+                },
             });
-            
-
+    
             if (!response.ok) {
                 throw new Error('Failed to submit billing details');
             }
-
-            const result = await response.json();
-            console.log(result);
+    
+            // const result = await response.json();
+            // console.log(result);
+            
+            // Assuming the amount is part of the response
+            // const amount = result.amount; // Adjust this to your actual backend response structure
+    // console.log(result)
+            // Proceed with payment
+            const paymentResponse = await fetch(`${API}/payments/${param.id}`, {
+                method: 'PUT',
+                body: JSON.stringify({
+                    payment_method: paymentMethod.id,
+                    // amount: amount, // Send the amount from the backend response
+                    payment_status: "completed", // Assuming status update is done manually or via Stripe API
+                }),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+    
+            const paymentData = await paymentResponse.json();
+    
+            if (paymentResponse.ok) {
+                const { clientSecret } = paymentData;
+    
+                // Use the clientSecret to confirm the payment
+                const { error: confirmError, paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
+                    payment_method: paymentMethod.id,
+                });
+    
+                if (confirmError) {
+                    setError(confirmError.message);
+                } else {
+                    if (paymentIntent.status === 'succeeded') {
+                        setSucceeded(true);
+                        alert('Payment succeeded!');
+                        navigate(`/`);
+                    } else {
+                        setError('Payment failed or requires further action.');
+                    }
+                }
+            } else {
+                setError(paymentData.error || 'Payment failed');
+            }
         } catch (err) {
-            console.error(err);
-            setError('Failed to process your request. Please try again.');
+            setError(err.message);
+        } finally {
             setIsProcessing(false);
         }
-
-
-
-        // try {
-        //     const response = await fetch(`${API}/payments/`, {
-        //         method: 'PUT',
-        //         body: JSON.stringify({
-        //          payment_method: paymentMethod.id, // Send the payment method ID to your backend
-        //          amount: 12500, // How can i retrieve the backend data for this ?
-        //          payment_status: "completed"
-        //         }),
-        //         headers: {
-        //             'Content-Type': 'application/json',
-        //         },
-        //     });
-
-        //     const data = await response.json();
-
-        //     if (response.ok) {
-        //         const { clientSecret } = data;
-
-        //         // Use the clientSecret to confirm the payment
-        //         const { error: confirmError, paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
-        //             payment_method: paymentMethod.id,
-        //         });
-
-        //         if (confirmError) {
-        //             setError(confirmError.message);
-        //         } else {
-        //             setSucceeded(true);
-        //             alert('Payment succeeded!');
-        //             navigate(`/`);
-        //         }
-        //     } else {
-        //         setError(data.error || 'Payment failed');
-        //     }
-        // } catch (err) {
-        //     setError(err.message);
-        // } finally {
-        //     setIsProcessing(false);
-        // }
-
     };
+    
 
 
     return (
