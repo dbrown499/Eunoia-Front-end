@@ -1,38 +1,41 @@
-import React, { useState} from 'react'
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import './App.scss'
+import './App.scss';
 
-import Navbar from './Components/Navbar'
-import Home from "./Pages/Home"
-import Index from "./Pages/Index"
-import Show from './Pages/Show'
-import Cart from './Pages/Cart'
+import Navbar from './Components/Navbar';
+import Home from "./Pages/Home";
+import Index from "./Pages/Index";
+import Show from './Pages/Show';
+import Cart from './Pages/Cart';
+import UpdateDatabase from './Pages/UpdateDatabase';
 
-import ContactInfo from './Components/ContactInfo'
-import ShoppingCartIcon from './Components/ShoppingCartIcon';
+import ContactInfo from './Components/ContactInfo';
+
 
 function App() {
-  const [cart, setCart] = useState({totalItems: 0, pieces: []});
- 
+  const [cart, setCart] = useState({ totalItems: 0, pieces: [] });
+
 
   return (
     <>
-      <Navbar quantity={cart.totalItems}/>
-    <main>
-      <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path='/products' element={<Index />}/>
-      <Route path='/products/:type' element={<Show cart={cart} setCart={setCart}/>}/>
-      <Route path='/products/cart' element={<Cart  quantity={cart.totalItems} items={cart.pieces} cart={cart} setCart={setCart}/>}/> 
-      {/* <Route path='/payment' element={<Payment/>}/>  */}
-      </Routes>
-    </main>
-   
-     <footer>
-      <ContactInfo />
-      </footer> 
+      <Navbar quantity={cart.totalItems} />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path='/products' element={<Index />} />
+          <Route path='/products/:type' element={<Show cart={cart} setCart={setCart} />} />
+          <Route path='/products/cart' element={<Cart cart={cart} setCart={setCart} />} />
+          <Route path='/billing-details/:id' element={<UpdateDatabase cart={cart} setCart={setCart} />}/>
+          {/* <Route path='/payments' element={<PaymentDetails />}/> */}
+          {/* <Route path="*" element={<FourOFour />} /> */}
+        </Routes>
+      </main>
+
+      <footer>
+        <ContactInfo />
+      </footer>
     </>
   )
-}
+};
 
-export default App
+export default App;

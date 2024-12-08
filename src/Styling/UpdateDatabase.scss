@@ -1,0 +1,118 @@
+///////////////////////////////BILLING DETAILS ///////////////////////////////////////////////
+
+.payment-form-container {
+  font-family: Arial, sans-serif;
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+  
+     .payment-form-title {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+  
+    .payment-form {
+      display: flex;
+      flex-direction: column;
+      // border: red 1px solid;
+
+  
+      .form-section {
+        margin-bottom: 20px;
+  
+        h3 {
+          margin-bottom: 10px;
+          color: #555;
+        }
+  
+        .form-group {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 15px;
+  
+          label {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            color: #666;
+          }
+  
+          input, select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            // border: red 1px solid;
+
+            &:focus {
+              border-color: #5e72e4;
+              outline: none;
+            }
+          }
+
+          // input::placeholder{
+          //   color: white;
+          //   background-color: black;
+          //   font-size: 1rem;
+          //   padding: 10px;
+          //   border-bottom: 1px solid #ccc;
+
+          // }
+        }
+  
+        .form-row {
+          display: flex;
+          gap: 15px;
+          
+  
+          .form-group {
+            flex: 1;
+          }
+        }
+      }
+  
+      .submit-btn {
+        background-color: #333;
+        color: #fff;
+        padding: 12px;
+        border: none;
+        // border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        // border: red 1px solid;
+  
+        &:hover {
+          background-color: #1d1d1d;
+        }
+      }
+    }
+  }
+  
+
+
+///////////////////////////////PAYMENT DETAILS ///////////////////////////////////////////////
+.error {
+  color: red;
+}
+
+@media only screen and  (max-width:  1215px){
+  * {
+    // border: red solid 1px;
+  }
+  .payment-form-container {
+    font-family: Arial, sans-serif;
+      max-width: 370px;
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+}
