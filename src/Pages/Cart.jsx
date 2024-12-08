@@ -8,7 +8,7 @@ const API = import.meta.env.VITE_API_URL;
 const Cart = ({ cart, setCart }) => {
   const navigate = useNavigate();
 
-console.log(cart)
+// console.log(cart)
   
   const sizeCounts = (cart.pieces).reduce((acc, item) => {
     if (!acc[item.size]) {
@@ -71,31 +71,69 @@ console.log(cart)
     });
   };
 
-  const addPriceToBackend = (e) => {
+  const updateBackendTables = async (e) => {
     e.preventDefault();
 
+    try {
+        // Step 1: Create the order
+        const orderResponse = await fetch(`${API}/orders`, {
+            method: 'POST',
+            body: JSON.stringify({
+                item_count: cart.totalItems,
+                total_amount: Number(totalPrice)
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
 
-    fetch(`${API}/payments`, {
-      method: 'POST',
-      body: JSON.stringify({
-        payment_method: "hey it worked!",
-        amount: Number(totalPrice),
-        nameofitem: cart.pieces[0].name,
-        size: cart.pieces.forEach(fit => {
-          fit.size
-        }),
-        quantity: cart.totalItems,
+        if (!orderResponse.ok) {
+            throw new Error('Failed to create order');
+        }
+
+        const orderData = await orderResponse.json();
+        const orderId = orderData.newOrder.order_id;  // Assuming the response contains the `order_id`
+
+        // console.log(orderData.newOrder.order_id)
+
+
+        // Step 2: Add order items
+        const orderItemsRequests = cart.pieces.map(async (obj) => {
+            const response = await fetch(`${API}/order-items`, {
+                method: 'POST',
+                body: JSON.stringify({
+                    order_id: orderId,  // Use the new order_id from the created order
+                    product_size: obj.size,
+                    taxes: totalTaxes / cart.totalItems,
+                    price_per_unit: (totalPrice / cart.totalItems) - 10
+                }),
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to add order item');
+            }
+
+            const data = await response.json();
+            return data; // Collect response data for each item
+        });
+
+        // Wait for all the order item requests to complete
+        const results = await Promise.all(orderItemsRequests);
+        console.log('All items added:', results);
+
+        // Step 3: Navigate to billing details page
+        navigate(`/billing-details/${orderData.newOrder.order_id}`);
         
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(res => res.json())
-    .then(res => navigate(`/billing-details`))
-    .catch(err => console.error(err));
-  }
+    } catch (error) {
+        console.error('Error processing order and items:', error);
+    }
+};
 
+
+// console.log(addOrderItemsToBackend(cart.peices))
 
   return (
     <div className="cart-">
@@ -169,7 +207,7 @@ console.log(cart)
           <span>${totalPrice.toFixed(2)}</span>
         </p>
         <Link to='/billing-details'>
-          <button onClick={addPriceToBackend} className="checkout-button">CHECKOUT</button>
+          <button onClick={updateBackendTables} className="checkout-button">CHECKOUT</button>
         </Link>
       </div>
       <Link to='/products' className="continue-shopping">continue shopping →

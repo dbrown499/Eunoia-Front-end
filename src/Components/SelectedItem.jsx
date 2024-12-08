@@ -33,7 +33,7 @@ const SelectedItem = ({ images, itemInfo, cart, setCart }) => {
         }
 
         const newCartItems = Array(quantity).fill({ ...itemInfo[0], size });
-        // console.log(cart.pieces)
+        // console.log(newCartItems)
         setCart({
             totalItems: cart.totalItems + quantity,
             pieces: [...cart.pieces, ...newCartItems],

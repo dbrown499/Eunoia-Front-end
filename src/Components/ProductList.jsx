@@ -11,12 +11,16 @@ const ProductList = () => {
     useEffect(() => {
         fetch(`${API}/products`)
             .then(res => res.json())
-            .then(res => setProducts(res))
+            .then(res => {
+                // console.log(res)
+                setProducts(res)
+            })
             .catch(err => console.log(err))
     }, []);
 
     const sortedProducts = products.reduce((acc, product) => {
         const type = product.type;
+        // console.log(type)
         
         if (!acc[type]) {
             acc[type] = [];
@@ -41,7 +45,7 @@ const ProductList = () => {
         //                  <Link to={`/products/${sect[0].type}`} className="item-link">
         //                      <img 
         //                          className='item-img'
-        //                          src={sect[0].type === 'Sweater' ? "../../assets/D1F5312F-C63B-41DF-B241-7D81D44676E9.png" : "assets/0521152011_664c3d1bdbbc2.jpg"} 
+        //                          src={sect[0].type === 'sweater' ? "../../assets/D1F5312F-C63B-41DF-B241-7D81D44676E9.png" : " "} 
         //                          alt={`${sect[0].type} photo`} 
         //                      />
         //                      <p className='item-description'>
