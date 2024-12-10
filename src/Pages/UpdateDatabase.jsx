@@ -8,11 +8,11 @@ import '../Styling/UpdateDatabase.scss';
 const stripePromise = loadStripe(import.meta.env.VITE_REACT_APP_STRIPE_PUBLISHABLE_KEY);
 
 
-const UpdateDatabase = () => {
+const UpdateDatabase = ({ cart, setCart}) => {
     return (
         <>
             <Elements stripe={stripePromise}>
-                <BillingDetails />
+                <BillingDetails cart={cart} setCart={setCart}/>
             </Elements>
 
         </>
