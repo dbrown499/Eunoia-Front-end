@@ -103,6 +103,21 @@ const BillingDetails = ({ cart, setCart }) => {
 
             // Decrease the product stock 
                 const productRequests = cart.pieces.map(async (obj) => {
+                    const stockResponse = await fetch(`${API}/products/${obj.size}`, {
+                        method: 'GET',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    });
+    
+                    // console.log(stockResponse)
+
+                    if (!stockResponse.ok) {
+                        throw new Error('Failed to fetch current stock');
+                    }
+        
+                    const stockData = await stockResponse.json();    
+                    const currentStock = stockData[0].stock; // Assuming the response has a `stock` property
                     // const sizeWithProductId = {
                     //     XS: 1, 
                     //     S: 2,
@@ -111,7 +126,7 @@ const BillingDetails = ({ cart, setCart }) => {
                     //     XL: 5, 
                     //     XXL: 6
                     // }
-                    // console.log(sizeWithProductId[obj.size])
+                    console.log(currentStock - 1)
                     const response = await fetch(`${API}/products/${obj.size}`, {
                         method: 'PUT',
                         body: JSON.stringify(),
@@ -131,8 +146,8 @@ const BillingDetails = ({ cart, setCart }) => {
                         // Wait for all the order item requests to complete
                         const results = await Promise.all(productRequests);
                         console.log('All products updated:', results);
-
                         navigate(`/`);
+                        window.location.reload(); // Reload the current page
                     } else {
                         setError('Payment failed or requires further action.');
                     }

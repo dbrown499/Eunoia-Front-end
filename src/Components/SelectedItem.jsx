@@ -28,7 +28,7 @@ const SelectedItem = ({ images, itemInfo, cart, setCart }) => {
                         }
                     });
     
-                    console.log(quantity)
+                    // console.log(quantity)
 
                     if (!stockResponse.ok) {
                         throw new Error('Failed to fetch current stock');
@@ -36,6 +36,11 @@ const SelectedItem = ({ images, itemInfo, cart, setCart }) => {
         
                     const stockData = await stockResponse.json();    
                     const currentStock = stockData[0].stock; // Assuming the response has a `stock` property
+
+                    if(!size){
+                        alert(`Select a size`);
+                        return;
+                    }
                     if (currentStock <= 0) {
                         alert(`Product in a size ${stockData[0].size} is out of stock!`);
                         setSize("SOLD OUT");
