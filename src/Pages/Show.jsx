@@ -10,12 +10,12 @@ const Show = ({cart, setCart}) => {
     const [itemInfo, setItemInfo] = useState([]);
     let { type } = useParams();
 
-    useEffect(() => {
-        fetch(`${API}/products/${type}`)
-            .then(res => res.json())
-            .then(res => setItemInfo(res))
-            .catch(err => console.log(err))
-    }, [type]);
+    // useEffect(() => {
+    //     fetch(`${API}/products/${type}`)
+    //         .then(res => res.json())
+    //         .then(res => setItemInfo(res))
+    //         .catch(err => console.log(err))
+    // }, [type]);
 
     const images = [
         "../../assets/D1F5312F-C63B-41DF-B241-7D81D44676E9.png",
