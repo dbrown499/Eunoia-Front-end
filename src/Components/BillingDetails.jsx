@@ -6,7 +6,7 @@ import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 const API = import.meta.env.VITE_API_URL;
 
 
-const BillingDetails = () => {
+const BillingDetails = ({ cart, setCart }) => {
     const param = useParams();
     const navigate = useNavigate();
     const stripe = useStripe();
@@ -16,47 +16,47 @@ const BillingDetails = () => {
     const [isProcessing, setIsProcessing] = useState(false);
     const [succeeded, setSucceeded] = useState(false);
     const [billingEntry, setBillingEntry] = useState({
-    order_id: param.id,
-    full_name: "",
-    address_line1: "",
-    city: "",
-    state: "",
-    postal_code: "",
-    country: "",
-    phone_number: "",
-    email: ""
+        order_id: param.id,
+        full_name: "",
+        address_line1: "",
+        city: "",
+        state: "",
+        postal_code: "",
+        country: "",
+        phone_number: "",
+        email: ""
     });
 
     const handleChange = (e) => {
         setBillingEntry((prevState) => {
-            return {...prevState, [e.target.name]: e.target.value}
+            return { ...prevState, [e.target.name]: e.target.value }
         });
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsProcessing(true);
-        
+
         if (!stripe || !elements) {
             setError('Stripe has not loaded correctly. Please refresh and try again.');
             setIsProcessing(false);
             return;
         }
-    
+
         const cardElement = elements.getElement(CardElement);
-    
+
         // Create payment method
         const { error: paymentMethodError, paymentMethod } = await stripe.createPaymentMethod({
             type: 'card',
             card: cardElement,
         });
-    
+
         if (paymentMethodError) {
             setError(paymentMethodError.message);
             setIsProcessing(false);
             return;
         }
-    
+
         try {
             // Submit billing details
             const response = await fetch(`${API}/billing-details`, {
@@ -66,17 +66,11 @@ const BillingDetails = () => {
                     'Content-Type': 'application/json',
                 },
             });
-    
+
             if (!response.ok) {
                 throw new Error('Failed to submit billing details');
             }
-    
-            // const result = await response.json();
-            // console.log(result);
-            
-            // Assuming the amount is part of the response
-            // const amount = result.amount; // Adjust this to your actual backend response structure
-    // console.log(result)
+
             // Proceed with payment
             const paymentResponse = await fetch(`${API}/payments/${param.id}`, {
                 method: 'PUT',
@@ -89,23 +83,55 @@ const BillingDetails = () => {
                     'Content-Type': 'application/json',
                 },
             });
-    
+
             const paymentData = await paymentResponse.json();
-    
+
             if (paymentResponse.ok) {
                 const { clientSecret } = paymentData;
-    
+
                 // Use the clientSecret to confirm the payment
                 const { error: confirmError, paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
                     payment_method: paymentMethod.id,
                 });
-    
+
                 if (confirmError) {
                     setError(confirmError.message);
                 } else {
                     if (paymentIntent.status === 'succeeded') {
                         setSucceeded(true);
                         alert('Payment succeeded!');
+
+            // Decrease the product stock 
+                const productRequests = cart.pieces.map(async (obj) => {
+                    // const sizeWithProductId = {
+                    //     XS: 1, 
+                    //     S: 2,
+                    //     M: 3,
+                    //     L: 4, 
+                    //     XL: 5, 
+                    //     XXL: 6
+                    // }
+                    // console.log(sizeWithProductId[obj.size])
+                    const response = await fetch(`${API}/products/${obj.size}`, {
+                        method: 'PUT',
+                        body: JSON.stringify(),
+                        headers: {
+                            'Content-Type': 'application/json',
+                        }
+                    });
+
+                            if (!response.ok) {
+                                throw new Error('Failed to update product stock');
+                            }
+
+                            const data = await response.json();
+                            return data; // Collect response data for each item
+                        });
+
+                        // Wait for all the order item requests to complete
+                        const results = await Promise.all(productRequests);
+                        console.log('All products updated:', results);
+
                         navigate(`/`);
                     } else {
                         setError('Payment failed or requires further action.');
@@ -120,7 +146,7 @@ const BillingDetails = () => {
             setIsProcessing(false);
         }
     };
-    
+
 
 
     return (
@@ -137,7 +163,7 @@ const BillingDetails = () => {
                             id="fullName"
                             name='full_name'
                             value={billingEntry.full_name}
-                            onChange={handleChange} 
+                            onChange={handleChange}
                             placeholder="John Doe"
                             required />
                     </div>
@@ -159,7 +185,7 @@ const BillingDetails = () => {
                             id="phone-number"
                             name='phone_number'
                             value={billingEntry.phone_number}
-                            onChange={handleChange} 
+                            onChange={handleChange}
                             placeholder='(123) 456-7890'
                             required />
                     </div>

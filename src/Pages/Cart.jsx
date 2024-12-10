@@ -137,6 +137,7 @@ const Cart = ({ cart, setCart }) => {
               'Content-Type': 'application/json'
           }
       });
+      
 
       if (!paymentResponse.ok) {
           throw new Error('Failed to create payment');

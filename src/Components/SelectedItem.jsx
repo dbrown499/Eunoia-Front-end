@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import '../Styling/Show.scss';
 
+const API = import.meta.env.VITE_API_URL;
+
+
 const SelectedItem = ({ images, itemInfo, cart, setCart }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [quantity, setQuantity] = useState(0);
@@ -20,8 +23,45 @@ const SelectedItem = ({ images, itemInfo, cart, setCart }) => {
     };
 
     const handleSizeChange = (e) => {
-        setSize(e.target.value);
-    };
+        const selectedSize = e.target.value;
+    
+    //     // Use an asynchronous function to fetch stock
+        const fetchStock = async () => {
+            try {
+                const stockResponse = await fetch(`${API}/products/${selectedSize}`, {
+                    method: 'GET',
+                    body: JSON.stringify(),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+
+                // console.log(stockData)
+                if (!stockResponse.ok) {
+                    throw new Error('Failed to fetch current stock');
+                }
+    
+                const stockData = await stockResponse.json();
+                console.log(stockData)
+
+                const currentStock = stockData[0].stock; // Assuming the response has a `stock` property
+    // console.log(currentStock)
+                if (currentStock <= 0) {
+                    alert(`Product in a size ${stockData[0].size} is out of stock!`);
+                    setSize("SOLD OUT");
+                    return;
+                }
+    
+                setSize(selectedSize); // Update the state only if the stock is available
+            } catch (error) {
+                console.error('Error fetching stock:', error.message);
+            }
+        };
+    
+        fetchStock(); // Call the asynchronous function
+    };    
+
 
     const handleAddToCart = () => {
         if (!quantity) {
@@ -94,12 +134,12 @@ const SelectedItem = ({ images, itemInfo, cart, setCart }) => {
                             onChange={handleSizeChange}
                         >
                             <option value="">Select an option...</option>
-                            <option value="Extra Small">Extra Small</option>
-                            <option value="Small">Small</option>
-                            <option value="Medium">Medium</option>
-                            <option value="Large">Large</option>
-                            <option value="X-Large">X-Large</option>
-                            <option value="2X-Large">2X-Large</option>
+                            <option value="XS">XS</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
                         </select>
 
                         <div className="actions">
@@ -127,12 +167,12 @@ const SelectedItem = ({ images, itemInfo, cart, setCart }) => {
                             onChange={handleSizeChange}
                         >
                             <option value="">Select an option...</option>
-                            <option value="Extra Small">Extra Small</option>
-                            <option value="Small">Small</option>
-                            <option value="Medium">Medium</option>
-                            <option value="Large">Large</option>
-                            <option value="X-Large">X-Large</option>
-                            <option value="2X-Large">2X-Large</option>
+                            <option value="XS">XS</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
                         </select>
 
                         <div className="actions">

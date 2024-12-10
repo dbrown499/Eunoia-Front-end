@@ -15,7 +15,6 @@ import ContactInfo from './Components/ContactInfo';
 function App() {
   const [cart, setCart] = useState({ totalItems: 0, pieces: [] });
 
-
   return (
     <>
       <Navbar quantity={cart.totalItems} />
