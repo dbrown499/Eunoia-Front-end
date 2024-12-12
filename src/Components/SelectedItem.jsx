@@ -162,7 +162,7 @@ const SelectedItem = ({ images, itemInfo, cart, setCart }) => {
 
 
                         <div className="price">
-                            <span className="current-price">$125</span>
+                            <span className="current-price">$125.00</span>
                             <span className="original-price">$156.25</span>
                         </div>
 
