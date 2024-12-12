@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import '../Styling/Show.scss';
+import SweaterPic from '../../assets/D1F5312F-C63B-41DF-B241-7D81D44676E9.png' 
+
 
 const API = import.meta.env.VITE_API_URL;
 
@@ -18,7 +20,7 @@ const SelectedItem = ({ images, itemInfo, cart, setCart }) => {
         // setQuantity(prevQuantity => prevQuantity + 1);
         const selectedSize = size;
     
-        //     // Use an asynchronous function to fetch stock
+            // Use an asynchronous function to fetch stock
             const fetchStock = async () => {
                 try {
                     const stockResponse = await fetch(`${API}/products/${selectedSize}`, {

@@ -3,6 +3,10 @@ import { useParams } from 'react-router-dom';
 import SelectedItem from '../Components/SelectedItem.jsx';
 import Breadcrumb from '../Components/Breadcrumbs.jsx';
 import '../Styling/Show.scss';
+import SweaterVeiw1 from "../../assets/D1F5312F-C63B-41DF-B241-7D81D44676E9.png";
+import SweaterVeiw2 from "../../assets/IMG_1632.png";
+import SweaterVeiw3 from "../../assets/IMG_1631.png";
+import SweaterVeiw4 from "../../assets/IMG_2520.png";
 
 const API = import.meta.env.VITE_API_URL;
 
@@ -18,10 +22,7 @@ const Show = ({cart, setCart}) => {
     // }, [type]);
 
     const images = [
-        "../../assets/D1F5312F-C63B-41DF-B241-7D81D44676E9.png",
-        "../../assets/IMG_1632.png",
-        "../../assets/IMG_1631.png",  
-        "../../assets/IMG_2520.png"  // Add more images as needed
+        SweaterVeiw1, SweaterVeiw2, SweaterVeiw3, SweaterVeiw4
     ];
 
     return (

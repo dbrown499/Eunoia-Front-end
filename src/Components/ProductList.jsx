@@ -1,41 +1,37 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import '../Styling/Index.scss';
-import Sweater from '../../assets/D1F5312F-C63B-41DF-B241-7D81D44676E9.png' 
+import SweaterPic from '../../assets/D1F5312F-C63B-41DF-B241-7D81D44676E9.png' 
 
 const API = import.meta.env.VITE_API_URL;
 
 const ProductList = () => {
-    const [products, setProducts] = useState([]);
+    // const [products, setProducts] = useState([]);
 
-    useEffect(() => {
-        fetch(`${API}/products`)
-            .then(res => res.json())
-            .then(res => {
-                // console.log(res)
-                setProducts(res)
-            })
-            .catch(err => console.log(err))
-    }, []);
+    // useEffect(() => {
+    //     fetch(`${API}/products`)
+    //         .then(res => res.json())
+    //         .then(res => {
+    //             setProducts(res)
+    //         })
+    //         .catch(err => console.log(err))
+    // }, []);
 
-    const sortedProducts = products.reduce((acc, product) => {
-        const type = product.type;
-        // console.log(type)
+    // const sortedProducts = products.reduce((acc, product) => {
+    //     const type = product.type;
         
-        if (!acc[type]) {
-            acc[type] = [];
-        }
+    //     if (!acc[type]) {
+    //         acc[type] = [];
+    //     }
         
-        acc[type].push(product);
+    //     acc[type].push(product);
         
-        return acc;
-    }, {});
+    //     return acc;
+    // }, {});
 
-    // console.log(sortedProducts)
     
-    const groupedProductsArray = Object.values(sortedProducts);
+    // const groupedProductsArray = Object.values(sortedProducts);
     
-    // console.log(groupedProductsArray)
     
     return (
         // <section className='items-container'>
@@ -67,7 +63,7 @@ const ProductList = () => {
                          <Link to={`/products/Sweater`} className="item-link">
                              <img 
                                  className='item-img'
-                                 src="../../assets/D1F5312F-C63B-41DF-B241-7D81D44676E9.png" 
+                                 src={SweaterPic} 
                              />
                              <p className='item-description'>
                                  Kiss The Moment Good Bye<br />
