@@ -1,45 +1,239 @@
 .contact_developer {
-    // color: white;
-    // border: solid hsl(0deg 0% 23%) 1px;
-    // margin-top: auto;
-    // margin-bottom: 0;
-    // padding: 0;
-    background: linear-gradient(hsl(0deg 0% 23%), black);
-    // margin: 0px 0px 0px 0px;
-    // border: solid red 1px;
+    margin-top: 0px;
+    background: linear-gradient(hsl(0, 2%, 23%), black);
+    border: solid red 1px;
+    padding: 4vw 4vw 2vw;
+    height: 400px;
 }
 
-.contact {
-    // border: solid red 1px;
-    margin: 0px 0px 0px 0px;
-    padding:  20px 0px 30px 0px;
-    text-align: center;
-    font-size: 12pt;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.follow-us {
+    padding-top: 6.4vw;
+    font-family: Whyte, sans-serif;
+    border: red 1px solid;
+    display: grid;
+    grid-template-columns: 30% 45% 10% 15%;
+
+    .quote {
+        // border: solid red 1px;
+
+        img {
+            // border: solid blue 1px;
+            width: 13vw;
+            height: 13vw;
+            margin-bottom: 0vw;
+            padding-left: 90px;
+        }
+
+        p {
+            // border: solid purple 1px;
+            margin-bottom: 0;
+            font-size: 1.28vw;
+            line-height: 2vw;
+            margin-top: 0;
+        }
+    }
+
+    .join {
+        // border: red 1px solid;
+        flex: none;
+
+
+        .waitlist-title {
+            // border: rgb(255, 0, 230) 1px solid;
+
+        }
+
+        .waitlist-description {
+            // border: yellow 1px solid;
+            max-width: 28vw;
+            letter-spacing: .01vw;
+            text-transform: uppercase;
+            margin-bottom: 1vw;
+            font-size: 1vw;
+            line-height: 1.4vw;
+
+        }
+
+        .sign-up-container {
+            // border: green 1px solid;
+            display: flex;
+
+            #sign-up {
+                width: 53%;
+                width: 20vw;
+                height: auto;
+                color: #fcfcfc;
+                text-transform: uppercase;
+                background-color: rgba(0, 0, 0, 0);
+                border: 1px solid #fcfcfc;
+                border-radius: 0;
+                margin-bottom: 0;
+                padding: 1em 15px;
+                font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+                font-size: 1vw;
+                font-weight: 400;
+                line-height: 1.6em;
+                outline: none;
+            }
+
+            .sub-button {
+                width: 11.4vw;
+                height: 3.8vw;
+                text-transform: uppercase;
+                background-color: white;
+                margin-left: 20px;
+                padding-top: 13px;
+                padding-bottom: 13px;
+                font-size: 1vw;
+                line-height: 1vw;
+                transition: all .2s;
+                border: none;
+
+            }
+
+            .sub-button:hover {
+                width: 11.4vw;
+                height: 3.8vw;
+                text-transform: uppercase;
+                background-color: rgb(39, 36, 36);
+                color: white;
+                margin-left: 20px;
+                padding-top: 13px;
+                padding-bottom: 13px;
+                font-size: 1vw;
+                line-height: 1vw;
+                transition: all .2s;
+                border: .5px solid white;
+
+            }
+        }
+    }
+
+    .follow {
+        border: 1px solid blue;
+
+        h1 {
+            // border: 1px solid blue;
+            padding-left: 8px;
+            max-width: 28vw;
+            letter-spacing: .01vw;
+            text-transform: uppercase;
+            margin-bottom: 1vw;
+            font-size: 1vw;
+            line-height: 1.4vw;
+        }
+
+        a {
+            color: #fcfcfc;
+            font-size: 1.5vw;
+            line-height: 3vw;
+            transition: all .3s;
+            display: inline-block;
+        }
+
+        .tiktok-image {
+            border: solid white 1px;
+            border-radius: 50%;
+            padding: 5px;
+            height: 30px;
+            margin-left: 10px;
+        }
+
+        .tiktok-image:hover {
+            background: linear-gradient(to top, rgb(63, 63, 63), rgb(120, 120, 120));
+            border: solid white 1px;
+            border-radius: 50%;
+            padding: 5px;
+            height: 30px;
+            margin-left: 10px;
+
+        }
+
+        .instagram-image {
+            border: solid white 1px;
+            width: 40px;
+            border-radius: 50%;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        .instagram-image:hover {
+            background: linear-gradient(to top, rgb(63, 63, 63), rgb(120, 120, 120));
+            border: solid white 1px;
+            width: 40px;
+            border-radius: 50%;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+
+    }
+
+    .call {
+        // border: 1px solid red;
+        padding-left: 13px;
+
+        h1 {
+            // border: 1px solid red;
+
+            max-width: 28vw;
+            letter-spacing: .01vw;
+            text-transform: uppercase;
+            margin-bottom: 1vw;
+            font-size: 1vw;
+            line-height: 1.4vw;
+
+        }
+
+        p {
+            // border: 1px solid red;
+            margin-top: 0;
+            color: #fcfcfc;
+            font-size: 1.5vw;
+            line-height: 3vw;
+            transition: all .3s;
+            display: inline-block;
+        }
+        p:hover {
+            // border: 1px solid red;
+            text-decoration: underline;
+            margin-top: 0;
+            color: #fcfcfc;
+            font-size: 1.5vw;
+            line-height: 3vw;
+            transition: all .3s;
+            display: inline-block;
+        }
+
+    }
 }
 
-.contact-images {
-    text-align: center;
-    // border: solid red 1px;
+.copyright-tag{
+    border: solid yellow 1px;
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+    border-top: 1px solid #fcfcfc;
+    // flex-wrap: wrap;
+    // justify-content: space-between;
+    // align-items: center;
+    // margin-top: 100px;
+    padding-top: 20px;
+    // display: flex;
+
+    .copyright {
+        // border: solid red 1px;
     
-}
+        color: rgb(108, 108, 108);
+        font-size: 10.5pt;
+    }
 
-.instagram-image {
-    width: 35px;
-    // height: 50px;
-    margin: 0px 10px 0px 10px;
-}
+    .each-card{
+        height: 30px
 
-.tiktok-image {
-    width: 30px;
-    height: 25px;
-    margin: 0px 10px 0px 10px;
+    }
 
 }
 
-.copyright {
-    // border: solid red 1px;
 
-    color: rgb(108, 108, 108);
-    font-size: 10.5pt;
-}
+
+
