@@ -15,7 +15,7 @@ const HamburgerMenu = () => {
                 <div className="burger burger2" /> 
                 <div className="burger burger3" />
             </div>
-                <div>MENU</div>
+                {/* <div>MENU</div> */}
         </div>
     )
 }

@@ -60,7 +60,7 @@ const Home = () => {
             <section id="scroll-container">
                 <p id="scroll-text">ŒUNÖIA </p>
             </section>
-            <section className='waitlist'>
+            {/* <section className='waitlist'>
                 <h2 className='waitlist-title'>JOIN THE WAITLIST</h2>
                 <p className='waitlist_description'>Life isn't perfect but your outfit can be, updates and reminders <br /> on new drops when you sign up. </p>
                 <form className='sign-up_container' onSubmit={addEmail}>
@@ -74,9 +74,9 @@ const Home = () => {
                         required
                     />
                     <br />
-                    <button className='sign-up_button' type="submit" >SIGN UP</button>
-                </form>
-            </section>
+                    <button className='sign-up_button' type="submit" >SIGN UP</button> */}
+                {/* </form>
+            </section> */}
         </>
     )
 }
