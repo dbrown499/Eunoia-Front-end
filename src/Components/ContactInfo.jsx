@@ -1,8 +1,59 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../Styling/ContactInfo.scss'
 
 
+const API = import.meta.env.VITE_API_URL;
+
 const ContactInfo = () => {
+     const navigate = useNavigate();
+  
+      const [newEmail, setNewEmail] = useState({
+          name_of_email: null
+      });
+  
+      const handleChange = (e) => {
+          setNewEmail({ ...newEmail, name_of_email: e.target.value });
+      };
+  
+  
+      const addEmail = async (e) => {
+          e.preventDefault(); // Prevent default form submission
+  
+          if (!newEmail.name_of_email) {
+              alert('Please enter your email');
+              return;
+          }
+  
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(newEmail.name_of_email)) {
+              alert('Please enter a valid email address');
+              return;
+          }
+  
+          try {
+              const response = await fetch(`${API}/emails`, {
+                  method: 'POST',
+                  body: JSON.stringify(newEmail),
+                  headers: {
+                      'Content-Type': 'application/json'
+                  }
+              });
+  
+              if (!response.ok) {
+                  throw new Error('Failed to add email');
+              }
+  
+              await response.json();
+              alert('Thanks For Signing Up!');
+              setNewEmail({ email: '' });
+              navigate(`/`);
+          } catch (err) {
+              console.error(err);
+              alert('Something went wrong. Please try again later.');
+          }
+      };
+
   return (
 
     <section className='contact_developer'>
@@ -10,23 +61,20 @@ const ContactInfo = () => {
 
         <div className='quote'>
           <img className="image " src="IMG_9543.PNG" alt="" />
-          {/* <p>Life isn't perfect but your outfit can be...</p> */}
         </div>
 
         <div className='join'>
-          {/* <h2 className='waitlist-title'>JOIN THE WAITLIST</h2> */}
           <p className='waitlist-description'>Updates & Reminders On New Drops When You Sign Up! </p>
           <form className='sign-up-container'
-          // onSubmit={addEmail}
+          onSubmit={addEmail}
           >
-            {/* <label  className='sign-up_label' htmlFor="sign-up">Email <small className='require'>(required)</small></label> */}
 
             <input
               placeholder='ENTER YOUR E-MAIL'
               type="text"
               id="sign-up"
-              // value={newEmail.email}
-              // onChange={handleChange}
+              value={newEmail.email}
+              onChange={handleChange}
               required
             />
             <br />
