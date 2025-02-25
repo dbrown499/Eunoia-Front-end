@@ -6,10 +6,10 @@ const ContactInfo = () => {
   return (
 
     <section className='contact_developer'>
-      <div className='follow-us join-list'>
+      <div className='follow-us join-list '>
 
         <div className='quote'>
-          <img src="IMG_9543.PNG" alt="" />
+          <img className="image " src="IMG_9543.PNG" alt="" />
           {/* <p>Life isn't perfect but your outfit can be...</p> */}
         </div>
 
@@ -20,9 +20,9 @@ const ContactInfo = () => {
           // onSubmit={addEmail}
           >
             {/* <label  className='sign-up_label' htmlFor="sign-up">Email <small className='require'>(required)</small></label> */}
-          
+
             <input
-            placeholder='ENTER YOUR E-MAIL'
+              placeholder='ENTER YOUR E-MAIL'
               type="text"
               id="sign-up"
               // value={newEmail.email}
@@ -34,22 +34,22 @@ const ContactInfo = () => {
           </form>
         </div>
 
-          <div className='follow'>
-            <h1>FOLLOW US</h1>
-            <a href="https://www.instagram.com/eunoiaexhibit?igsh=dWgzc20yanJxMWV2" target="_blank">
-              <img src="assets/instagramicon.png" className="instagram-image " alt="" />
-            </a>
-            <a href="https://www.tiktok.com/@eunoiaexhibit?_t=ZT-8tqa9Sdb9vm&_r=1" target="_blank">
-              <img src="assets/tiktokicon.png" className="tiktok-image" alt="" />
-            </a>
-          </div>
+<div className='follow'>
+          <h1>FOLLOW US</h1>
+          <a href="https://www.instagram.com/eunoiaexhibit?igsh=dWgzc20yanJxMWV2" target="_blank">
+            <img src="assets/instagramicon.png" className="instagram-image " alt="" />
+          </a>
+          <a href="https://www.tiktok.com/@eunoiaexhibit?_t=ZT-8tqa9Sdb9vm&_r=1" target="_blank">
+            <img src="assets/tiktokicon.png" className="tiktok-image" alt="" />
+          </a>
+        </div>
 
-          <div className='call'>
-            <h1>CALL US</h1>
-            <p>+1 (646) 444-4107</p>
-          </div>
-
+        <div className='call'>
+          <h1>CALL US</h1>
+          <a href="tel:+16464444107">+1 (646) 444-4107</a>
+        </div>
       </div>
+       
 
       <div className='copyright-tag pay-images'>
         <p className='copyright'>© 2024 ŒUNÖIA. All rights reserved.</p>

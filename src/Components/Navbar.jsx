@@ -29,7 +29,6 @@ const Navbar = ({ quantity }) => {
 
         ) : (
           <div  className='render'>
-            {/* <Link className='login'>LOGIN / REGISTER</Link> */}
             <Link className='shop-now' to={'/products'}>SHOP NOW</Link>
           </div>
         )}

@@ -1,15 +1,12 @@
 .nav {
     position: sticky;
-top: 0;
-background-color: black;
-z-index: 1000;
-
+    top: 0;
+    background-color: black;
+    z-index: 1000;
     padding: 20px 20px;
-    // border: solid red 1px;
     display: grid;
-    place-items: center; /* centers both vertically and horizontally */
+    place-items: center;
     grid-template-columns: 33% 33% 33%;
-    // margin: 10px 10px;
 }
 
 
@@ -39,8 +36,10 @@ z-index: 1000;
 
 .render {
     // border: solid red 1px;
-    display: flex; /* Sets children in a row */
-    align-items: center; /* Vertically aligns items */
+    display: flex;
+    /* Sets children in a row */
+    align-items: center;
+    /* Vertically aligns items */
     gap: 20px;
     text-align: right;
     margin-left: 140px;
@@ -71,35 +70,35 @@ z-index: 1000;
 
 
 ////////////////////////////////////HAMBURGER MENU SCSS//////////////////////
-.burger-menu{
+.burger-menu {
     // border: solid 1px green;
     display: grid;
     grid-template-columns: 50% 50%;
-    place-items: center; 
+    place-items: center;
     font-family: sans Arial, Helvetica, sans-serif;
     margin-right: 75%;
     cursor: pointer;
-    
+
 }
 
-.hamburger{
+.hamburger {
     margin-right: 5px;
     // border: solid 1px green;
     width: 2rem;
-    height: 1.5rem; 
-    display: flex; 
+    height: 1.5rem;
+    display: flex;
     justify-content: space-around;
-    flex-flow: column nowrap; 
+    flex-flow: column nowrap;
     cursor: pointer;
 }
 
-.burger{
+.burger {
     width: 1.5rem;
-    height: .2rem; 
-    border-radius: 10px; 
-    background-color: white; 
+    height: .2rem;
+    border-radius: 10px;
+    background-color: white;
     transition: transform 0.3s ease, opacity 0.3s ease;
-    
+
 }
 
 .hamburger.open .burger1 {
@@ -107,7 +106,7 @@ z-index: 1000;
 }
 
 .hamburger.open .burger2 {
-    opacity: 0; 
+    opacity: 0;
 }
 
 .hamburger.open .burger3 {
@@ -123,15 +122,15 @@ z-index: 1000;
     grid-template-columns: 50% 50%;
     padding-top: 15px;
     // border: solid red 1px;
-    
-    
+
+
     .quantity-number {
         height: 35px;
         font-family: sans Arial, Helvetica, sans-serif;
         font-size: 12pt;
         // border: solid red 1px;
     }
-    
+
     .gg-shopping-cart {
         // border: solid red 1px;
         // margin-left: 10%;
@@ -142,15 +141,16 @@ z-index: 1000;
         width: 30px;
         height: 45px;
         background:
-        linear-gradient(to left, currentColor 100px, transparent 0) no-repeat 1px 6px/22px 2px,
-        linear-gradient(to left, currentColor 100px, transparent 0) no-repeat 3px 20px/17px 2px,
-        linear-gradient(to left, currentColor 100px, transparent 0) no-repeat -5px 2px/4px 2px,
-        radial-gradient(circle, currentColor 60%, transparent 40%) no-repeat 14.5px 25px/4px 5px,
-        radial-gradient(circle, currentColor 60%, transparent 40%) no-repeat 3.5px 25px/4px 5px;
+            linear-gradient(to left, currentColor 100px, transparent 0) no-repeat 1px 6px/22px 2px,
+            linear-gradient(to left, currentColor 100px, transparent 0) no-repeat 3px 20px/17px 2px,
+            linear-gradient(to left, currentColor 100px, transparent 0) no-repeat -5px 2px/4px 2px,
+            radial-gradient(circle, currentColor 60%, transparent 40%) no-repeat 14.5px 25px/4px 5px,
+            radial-gradient(circle, currentColor 60%, transparent 40%) no-repeat 3.5px 25px/4px 5px;
         cursor: pointer;
-        transform: scaleX(-1); /* Flips the icon horizontally */
+        transform: scaleX(-1);
+        /* Flips the icon horizontally */
     }
-    
+
     .gg-shopping-cart::after,
     .gg-shopping-cart::before {
         content: "";
@@ -164,7 +164,7 @@ z-index: 1000;
         left: 0px;
         transform: skew(12deg);
     }
-    
+
     .gg-shopping-cart::after {
         height: 15px;
         top: 6px;
@@ -175,112 +175,115 @@ z-index: 1000;
 
 
 
-@media only screen and  (max-width:  1215px){
+@media only screen and (max-width: 1215px) {
 
     .nav {
-        padding: 0px 0px 0px 30px ;
+        padding: 0px 0px 0px 30px;
         // margin: 0px 0px 0px 0px ;
         // border: solid red 1px;
         display: grid;
-        place-items: center; /* centers both vertically and horizontally */
+        place-items: center;
+        /* centers both vertically and horizontally */
         grid-template-columns: 29% 40% 33%;
         // grid-template-columns: 20% 20% 20%;
     }
 
-// .login{
-//     display: none;
-// }
+    // .login{
+    //     display: none;
+    // }
 
-.shop-now {
-    border: solid rgb(175, 175, 175) 1px;
-    margin-right: 0%;
-    padding: 9px 10px;
-    font-family: sans Arial, Helvetica, sans-serif;
-    // letter-spacing: 2px;
-    color: white;
-    text-decoration: none;
-    // background-color: rgb(20, 20, 20);
-}
+    .shop-now {
+        border: solid rgb(175, 175, 175) 1px;
+        margin-right: 0%;
+        padding: 9px 10px;
+        font-family: sans Arial, Helvetica, sans-serif;
+        // letter-spacing: 2px;
+        color: white;
+        text-decoration: none;
+        // background-color: rgb(20, 20, 20);
+    }
 
-.shop-now:hover {
-    border: solid rgb(175, 175, 175) 1px;
-    margin-right: 0%;
-    padding: 9px 10px;
-    font-family: sans Arial, Helvetica, sans-serif;
-    // letter-spacing: 2px;
-    color: black;
-    text-decoration: none;
-    background-color: rgb(255, 255, 255);
-}
+    .shop-now:hover {
+        border: solid rgb(175, 175, 175) 1px;
+        margin-right: 0%;
+        padding: 9px 10px;
+        font-family: sans Arial, Helvetica, sans-serif;
+        // letter-spacing: 2px;
+        color: black;
+        text-decoration: none;
+        background-color: rgb(255, 255, 255);
+    }
 
-.shop {
-display: none;
-}
+    .shop {
+        display: none;
+    }
 
-.render {
-    // border: solid blue 1px;
-    display: flex; /* Sets children in a row */
-    align-items: center; /* Vertically aligns items */
-    gap: 20px;
-    text-align: right;
-    margin: 0px;
-}
+    .render {
+        // border: solid blue 1px;
+        display: flex;
+        /* Sets children in a row */
+        align-items: center;
+        /* Vertically aligns items */
+        gap: 20px;
+        text-align: right;
+        margin: 0px;
+    }
 
-// .cart-quantity {
-//     display: grid;
-//     place-items: center;
-//     grid-template-columns: 50% 50%;
-//     padding-top: 15px;
-//     // border: solid red 1px;
-//     margin: 0px 135px 0px 10px;
+    // .cart-quantity {
+    //     display: grid;
+    //     place-items: center;
+    //     grid-template-columns: 50% 50%;
+    //     padding-top: 15px;
+    //     // border: solid red 1px;
+    //     margin: 0px 135px 0px 10px;
 
 
-//     .quantity-number {
-//         height: 35px;
-//         font-family: sans Arial, Helvetica, sans-serif;
-//         font-size: 12pt;
-//         // border: solid red 1px;
-//     }
+    //     .quantity-number {
+    //         height: 35px;
+    //         font-family: sans Arial, Helvetica, sans-serif;
+    //         font-size: 12pt;
+    //         // border: solid red 1px;
+    //     }
 
-//     .gg-shopping-cart {
-//         // border: solid red 1px;
-//         // margin-left: 10%;
-//         color: white;
-//         display: block;
-//         box-sizing: border-box;
-//         position: relative;
-//         width: 30px;
-//         height: 45px;
-//         background:
-//             linear-gradient(to left, currentColor 100px, transparent 0) no-repeat 1px 6px/22px 2px,
-//             linear-gradient(to left, currentColor 100px, transparent 0) no-repeat 3px 20px/17px 2px,
-//             linear-gradient(to left, currentColor 100px, transparent 0) no-repeat -5px 2px/4px 2px,
-//             radial-gradient(circle, currentColor 60%, transparent 40%) no-repeat 14.5px 25px/4px 5px,
-//             radial-gradient(circle, currentColor 60%, transparent 40%) no-repeat 3.5px 25px/4px 5px;
-//         cursor: pointer;
-//         transform: scaleX(-1); /* Flips the icon horizontally */
-//     }
-    
-//     .gg-shopping-cart::after,
-//     .gg-shopping-cart::before {
-//         content: "";
-//         display: block;
-//         position: absolute;
-//         box-sizing: border-box;
-//         width: 2px;
-//         height: 20px;
-//         background: currentColor;
-//         top: 2px;
-//         left: 0px;
-//         transform: skew(12deg);
-//     }
-    
-//     .gg-shopping-cart::after {
-//         height: 15px;
-//         top: 6px;
-//         left: 20px;
-//         transform: skew(-12deg);
-//     }
-// }
+    //     .gg-shopping-cart {
+    //         // border: solid red 1px;
+    //         // margin-left: 10%;
+    //         color: white;
+    //         display: block;
+    //         box-sizing: border-box;
+    //         position: relative;
+    //         width: 30px;
+    //         height: 45px;
+    //         background:
+    //             linear-gradient(to left, currentColor 100px, transparent 0) no-repeat 1px 6px/22px 2px,
+    //             linear-gradient(to left, currentColor 100px, transparent 0) no-repeat 3px 20px/17px 2px,
+    //             linear-gradient(to left, currentColor 100px, transparent 0) no-repeat -5px 2px/4px 2px,
+    //             radial-gradient(circle, currentColor 60%, transparent 40%) no-repeat 14.5px 25px/4px 5px,
+    //             radial-gradient(circle, currentColor 60%, transparent 40%) no-repeat 3.5px 25px/4px 5px;
+    //         cursor: pointer;
+    //         transform: scaleX(-1); /* Flips the icon horizontally */
+    //     }
+
+    //     .gg-shopping-cart::after,
+    //     .gg-shopping-cart::before {
+    //         content: "";
+    //         display: block;
+    //         position: absolute;
+    //         box-sizing: border-box;
+    //         width: 2px;
+    //         height: 20px;
+    //         background: currentColor;
+    //         top: 2px;
+    //         left: 0px;
+    //         transform: skew(12deg);
+    //     }
+
+    //     .gg-shopping-cart::after {
+    //         height: 15px;
+    //         top: 6px;
+    //         left: 20px;
+    //         transform: skew(-12deg);
+    //     }
+    // }
 
 }

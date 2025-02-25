@@ -184,7 +184,7 @@
 
         }
 
-        p {
+        a {
             // border: 1px solid red;
             margin-top: 0;
             color: #fcfcfc;
@@ -194,7 +194,7 @@
             display: inline-block;
         }
 
-        p:hover {
+        a:hover {
             // border: 1px solid red;
             text-decoration: underline;
             margin-top: 0;
@@ -210,7 +210,7 @@
 
 .copyright-tag {
     // border: solid yellow 1px;
-
+    // background-color: white;
     display: grid;
     grid-template-columns: 50% 50%;
     border-top: 1px solid #fcfcfc;
@@ -220,6 +220,7 @@
     margin-top: 50px;
     padding-top: 20px;
     // display: flex;
+
 
 
     .copyright {
@@ -234,7 +235,161 @@
     .each-card {
         height: 40px;
         // border: solid red 1px;
-margin-top: 10px;
+        margin-top: 10px;
+
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+    .follow-us {
+        padding: 6.3vw 6.3vw;
+        display: flex;
+        flex-wrap: wrap;
+        // border: 1px solid blue;
+
+        .quote {
+
+            img {
+                display: none;
+            }
+
+        }
+
+        .join {
+            // margin-top: 100px;
+            box-sizing: border-box;
+            margin-bottom: 125px;
+            // border: yellow 1px solid;
+
+            .waitlist-description {
+                letter-spacing: .02vw;
+                max-width: 70%;
+                margin-bottom: 4vw;
+                font-size: 3.8vw;
+                line-height: 4.8vw;
+                // text-align: center;
+
+            }
+
+            .sign-up-container {
+                // border: green 1px solid;
+                display: flex;
+                flex-direction: column;
+
+                #sign-up {
+                    display: block;
+                    width: 62%;
+                    font-size: 4vw;
+                }
+
+                .sub-button {
+                    display: block;
+                    width: 68%;
+                    margin-bottom: 10px;
+                    height: 15.3vw;
+                    margin-left: 0;
+                    font-size: 4vw;
+                    line-height: 5.5vw;
+                    color: black;
+
+                }
+            }
+        }
+
+        .follow {
+            // border: 1px solid red;
+            display: inline-block;
+            float: none;
+            width: 45%;
+            text-align: center;
+            flex: 1;
+
+
+            h1 {
+                // border: 1px solid blue;
+                max-width: 100%;
+                margin-bottom: 4vw;
+                font-size: 3.8vw;
+                line-height: 4.8vw;
+            }
+
+            a {
+                color: #fcfcfc;
+                font-size: 1.5vw;
+                line-height: 3vw;
+                transition: all .3s;
+                display: inline-block;
+            }
+
+            .tiktok-image {
+                border: solid white 1px;
+                border-radius: 50%;
+                padding: 5px;
+                height: 30px;
+                margin-left: 10px;
+            }
+
+            .instagram-image {
+                border: solid white 1px;
+                width: 40px;
+                border-radius: 50%;
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+        }
+
+        .call {
+            // border: 1px solid purple;
+            display: inline-block;
+            float: none;
+            width: 50%;
+            flex: 1;
+
+
+            h1 {
+                // border: 1px solid red;
+                max-width: 100%;
+                margin-bottom: 4vw;
+                font-size: 3.8vw;
+                line-height: 4.8vw;
+                text-align: center;
+
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+                font-size: 4.5vw;
+                line-height: 7vw;
+            }
+
+        }
+    }
+
+    .copyright-tag {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-top: 18vw;
+        text-align: center;
+
+        .copyright {
+            margin-bottom: 1vw;
+            font-size: 3.7vw;
+            line-height: 6vw;
+            text-align: center;
+                        // border: solid red 1px;
+
+        }
+
+        .each-card {
+            display: none;
+            // height: 40px;
+            // border: solid red 1px;
+            // margin-top: 10px;
+
+        }
 
     }
 

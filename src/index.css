@@ -1,22 +1,12 @@
-body {
+html, body {
   background-color: black;
   color: hsl(0deg 0% 98%);
-  /* border: 1px red solid; */
-  /* margin: 0; */
-  
-  /* padding: 0; */
-  /*
-  width: 100vw; 
-  height: 100vh; 
-  display: flex; 
-  justify-content: center;
-  align-items: center; */
-  /* overflow: hidden;  */
+  /* border: 1px blue solid; */
+margin: 0;
+overflow-x: hidden; /* Hide horizontal scrollbar */
+overflow-y: auto;
 }
 
-* {
-  /* outline: 1px solid red; */
-}
 
   
 
