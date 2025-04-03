@@ -39,20 +39,28 @@ Eunoia is powered by:
 - Access to the backend API: [Eunoia Backend Repository](https://github.com/dbrown499/Eunoia-Back-end).
 
 ### Installation  
-1. Clone the repository:  
+1. Clone both repositories:  
    ```bash  
-   git clone https://github.com/<your-username>/eunoia.git  
-   cd eunoia
+   git clone https://github.com/<your-username>/Eunoia-Front-end.git 
+   cd Eunoia-Front-end
+
+   git clone https://github.com/<your-username>/Eunoia-Back-end.git 
+   cd Eunoia-Back-end
    ```
    
-2. Install dependencies:  
+2. Install dependencies for both repositories:  
    ```bash
    npm install
    ```
    
-3. Start the development server:
+3. Start the development server front end:
    ```bash
    npm run dev
+   ```
+
+   Start the development server back end:
+   ```bash
+   npm start
    ```
 
 ---
