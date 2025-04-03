@@ -1,5 +1,5 @@
 # Eunoia 🌟  
-Welcome to **Eunoia**, an eCommerce platform designed to bring my brother's clothing brand to life! This project is about more than just selling clothes; it's about celebrating creativity, connection, and individuality.  
+Welcome to **Eunoia**, an eCommerce platform designed to provide small brand owner's a platform to expand their products to the world! This project is about more than just selling clothes; it's about celebrating creativity, connection, and individuality.  
 
 Whether you're a developer checking out the code or a fashion enthusiast, Eunoia is here to inspire.  
 
@@ -11,7 +11,7 @@ Eunoia is a stylish, functional eCommerce platform where fashion meets tech. It 
 - Add their favorite pieces to the cart.  
 - Check out seamlessly with a clean, intuitive interface.  
 
-This app is built to make the shopping experience as effortless as possible for upcoming clothing brands a platform to shine!  
+This app is built to make the shopping experience as effortless as possible for upcoming clothing brands.  
 
 ---
 
@@ -57,7 +57,7 @@ Eunoia is powered by:
 ---
 
 ## 🤝 Contributing
-We’d love your input! If you have ideas or spot an issue, feel free to:
+I’d love your input! If you have ideas or spot an issue, feel free to:
 
 Open an issue.
 Submit a pull request.
@@ -66,8 +66,8 @@ Let’s make Eunoia even better together!
 ---
 
 ## ❤️ Acknowledgments
-- To my brother, for inspiring this journey and bringing his clothing brand to life.
-- To the tech community, for all the shared knowledge that made this project possible.
+- To the owner of Eunoia Apparel, for inspiring this journey and trusting me to bring their brand to life.
+- To Pursuit, for the knowledge and support that made this possible.
 
 ---
 
