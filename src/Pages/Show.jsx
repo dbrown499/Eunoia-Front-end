@@ -33,4 +33,4 @@ const Show = ({cart, setCart}) => {
     )
 }
 
-export default Show
+export default Show;

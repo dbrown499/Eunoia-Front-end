@@ -24,13 +24,12 @@ const Navbar = ({ quantity }) => {
           <div className='render'>
             <Link to={'/products/cart'} className='cart'>{<ShoppingCartIcon quantity={quantity}/>}
             </Link>
-            <Link className='shop shop-now' to={'/products'}>SHOP </Link>
+            <Link className='shop shop-now' to={'/products'}>SHOP NOW</Link>
           </div>
 
         ) : (
           <div  className='render'>
-            <Link className='login'>LOGIN / REGISTER</Link>
-            <Link className='shop-now' to={'/products'}>SHOP </Link>
+            <Link className='shop-now' to={'/products'}>SHOP NOW</Link>
           </div>
         )}
       </div>
