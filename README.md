@@ -35,7 +35,8 @@ Eunoia is powered by:
 
 ### Prerequisites  
 - **Node.js** installed on your machine.  
-- A package manager like `npm` or `yarn`.  
+- A package manager like `npm` or `yarn`.
+- Access to the backend API: [Eunoia Backend Repository](https://github.com/dbrown499/Eunoia-Back-end).
 
 ### Installation  
 1. Clone the repository:  
