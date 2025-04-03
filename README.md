@@ -11,7 +11,7 @@ Eunoia is a stylish, functional eCommerce platform where fashion meets tech. It 
 - Add their favorite pieces to the cart.  
 - Check out seamlessly with a clean, intuitive interface.  
 
-This app is built to make the shopping experience as effortless as possible—so my brother's brand can shine!  
+This app is built to make the shopping experience as effortless as possible for upcoming clothing brands a platform to shine!  
 
 ---
 
