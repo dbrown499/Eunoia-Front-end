@@ -4,7 +4,7 @@ import '../Styling/ContactInfo.scss'
 import cards from '../../assets/card-icons.png';
 import tiktok from '../../assets/tiktokicon.png';
 import instagram from '../../assets/instagramicon.png';
-import brandLogo from '../../assets/IMG_9543.PNG';
+import brandLogo from '../../assets/brandlogo.png';
 
 
 const API = import.meta.env.VITE_API_URL;
