@@ -24,7 +24,8 @@ function App() {
           <Route path='/products' element={<Index />} />
           <Route path='/products/:type' element={<Show cart={cart} setCart={setCart} />} />
           <Route path='/products/cart' element={<Cart cart={cart} setCart={setCart} />} />
-          <Route path='/billing-details/:id' element={<UpdateDatabase cart={cart} setCart={setCart} />}/>
+          {/* <Route path='/billing-details/:id' element={<UpdateDatabase cart={cart} setCart={setCart} />}/> */}
+          <Route path='/billing-details' element={<UpdateDatabase cart={cart} setCart={setCart} />}/>
           {/* <Route path='/payments' element={<PaymentDetails />}/> */}
           {/* <Route path="*" element={<FourOFour />} /> */}
         </Routes>

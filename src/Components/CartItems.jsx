@@ -43,4 +43,4 @@ const handleChange = (e) => {
   )
 }
 
-export default CartItems
+export default CartItems;

@@ -6,53 +6,53 @@ import '../Styling/ContactInfo.scss'
 const API = import.meta.env.VITE_API_URL;
 
 const ContactInfo = () => {
-     const navigate = useNavigate();
-  
-      const [newEmail, setNewEmail] = useState({
-          name_of_email: null
+  const navigate = useNavigate();
+
+  const [newEmail, setNewEmail] = useState({
+    name_of_email: null
+  });
+
+  const handleChange = (e) => {
+    setNewEmail({ ...newEmail, name_of_email: e.target.value });
+  };
+
+
+  const addEmail = async (e) => {
+    e.preventDefault(); // Prevent default form submission
+
+    if (!newEmail.name_of_email) {
+      alert('Please enter your email');
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(newEmail.name_of_email)) {
+      alert('Please enter a valid email address');
+      return;
+    }
+
+    try {
+      const response = await fetch(`${API}/emails`, {
+        method: 'POST',
+        body: JSON.stringify(newEmail),
+        headers: {
+          'Content-Type': 'application/json'
+        }
       });
-  
-      const handleChange = (e) => {
-          setNewEmail({ ...newEmail, name_of_email: e.target.value });
-      };
-  
-  
-      const addEmail = async (e) => {
-          e.preventDefault(); // Prevent default form submission
-  
-          if (!newEmail.name_of_email) {
-              alert('Please enter your email');
-              return;
-          }
-  
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          if (!emailRegex.test(newEmail.name_of_email)) {
-              alert('Please enter a valid email address');
-              return;
-          }
-  
-          try {
-              const response = await fetch(`${API}/emails`, {
-                  method: 'POST',
-                  body: JSON.stringify(newEmail),
-                  headers: {
-                      'Content-Type': 'application/json'
-                  }
-              });
-  
-              if (!response.ok) {
-                  throw new Error('Failed to add email');
-              }
-  
-              await response.json();
-              alert('Thanks For Signing Up!');
-              setNewEmail({ email: '' });
-              navigate(`/`);
-          } catch (err) {
-              console.error(err);
-              alert('Something went wrong. Please try again later.');
-          }
-      };
+
+      if (!response.ok) {
+        throw new Error('Failed to add email');
+      }
+
+      await response.json();
+      alert('Thanks For Signing Up!');
+      setNewEmail({ email: '' });
+      navigate(`/`);
+    } catch (err) {
+      console.error(err);
+      alert('Something went wrong. Please try again later.');
+    }
+  };
 
   return (
 
@@ -60,13 +60,13 @@ const ContactInfo = () => {
       <div className='follow-us join-list '>
 
         <div className='quote'>
-          <img className="image " src="IMG_9543.PNG" alt="" />
+          <img className="image " src="../../assets/IMG_9543.PNG" alt="" />
         </div>
 
         <div className='join'>
           <p className='waitlist-description'>Updates & Reminders On New Drops When You Sign Up! </p>
           <form className='sign-up-container'
-          onSubmit={addEmail}
+            onSubmit={addEmail}
           >
 
             <input
@@ -82,13 +82,13 @@ const ContactInfo = () => {
           </form>
         </div>
 
-<div className='follow'>
+        <div className='follow'>
           <h1>FOLLOW US</h1>
           <a href="https://www.instagram.com/eunoiaexhibit?igsh=dWgzc20yanJxMWV2" target="_blank">
-            <img src="assets/instagramicon.png" className="instagram-image " alt="" />
+            <img src="../../assets/instagramicon.png" className="instagram-image " alt="" />
           </a>
           <a href="https://www.tiktok.com/@eunoiaexhibit?_t=ZT-8tqa9Sdb9vm&_r=1" target="_blank">
-            <img src="assets/tiktokicon.png" className="tiktok-image" alt="" />
+            <img src="../../assets/tiktokicon.png" className="tiktok-image" alt="" />
           </a>
         </div>
 
@@ -97,12 +97,12 @@ const ContactInfo = () => {
           <a href="tel:+16464444107">+1 (646) 444-4107</a>
         </div>
       </div>
-       
+
 
       <div className='copyright-tag pay-images'>
         <p className='copyright'>© 2024 ŒUNÖIA. All rights reserved.</p>
         <div className='cards'>
-          <img className="each-card" src="assets/Screenshot 2025-02-12 at 2.11.37 AM.png" alt="cards" />
+          <img className="each-card" src="./assets/card-icons.png" alt="cards" />
         </div>
       </div>
     </section>
@@ -110,4 +110,4 @@ const ContactInfo = () => {
   )
 }
 
-export default ContactInfo
+export default ContactInfo;

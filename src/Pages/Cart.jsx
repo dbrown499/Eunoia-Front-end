@@ -71,86 +71,86 @@ const Cart = ({ cart, setCart }) => {
     });
   };
 
-  const updateBackendTables = async (e) => {
-    e.preventDefault();
+  // const updateBackendTables = async (e) => {
+  //   e.preventDefault();
 
-    try {
-        // Step 1: Create the order
-        const orderResponse = await fetch(`${API}/orders`, {
-            method: 'POST',
-            body: JSON.stringify({
-                item_count: cart.totalItems,
-                total_amount: Number(totalPrice)
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
+  //   try {
+  //       // Step 1: Create the order
+  //       const orderResponse = await fetch(`${API}/orders`, {
+  //           method: 'POST',
+  //           body: JSON.stringify({
+  //               item_count: cart.totalItems,
+  //               total_amount: Number(totalPrice)
+  //           }),
+  //           headers: {
+  //               'Content-Type': 'application/json'
+  //           }
+  //       });
 
-        if (!orderResponse.ok) {
-            throw new Error('Failed to create order');
-        }
+  //       if (!orderResponse.ok) {
+  //           throw new Error('Failed to create order');
+  //       }
 
-        const orderData = await orderResponse.json();
-        const orderId = orderData.newOrder.order_id;  // Assuming the response contains the `order_id`
+  //       const orderData = await orderResponse.json();
+  //       const orderId = orderData.newOrder.order_id;  // Assuming the response contains the `order_id`
 
-        // console.log(orderData.newOrder.order_id)
+  //       // console.log(orderData.newOrder.order_id)
 
 
-        // Step 2: Add order items
-        const orderItemsRequests = cart.pieces.map(async (obj) => {
-            const response = await fetch(`${API}/order-items`, {
-                method: 'POST',
-                body: JSON.stringify({
-                    order_id: orderId,  // Use the new order_id from the created order
-                    product_size: obj.size,
-                    taxes: totalTaxes / cart.totalItems,
-                    price_per_unit: (totalPrice / cart.totalItems) - 10
-                }),
-                headers: {
-                    'Content-Type': 'application/json',
-                }
-            });
+  //       // Step 2: Add order items
+  //       const orderItemsRequests = cart.pieces.map(async (obj) => {
+  //           const response = await fetch(`${API}/order-items`, {
+  //               method: 'POST',
+  //               body: JSON.stringify({
+  //                   order_id: orderId,  // Use the new order_id from the created order
+  //                   product_size: obj.size,
+  //                   taxes: totalTaxes / cart.totalItems,
+  //                   price_per_unit: (totalPrice / cart.totalItems) - 10
+  //               }),
+  //               headers: {
+  //                   'Content-Type': 'application/json',
+  //               }
+  //           });
 
-            if (!response.ok) {
-                throw new Error('Failed to add order item');
-            }
+  //           if (!response.ok) {
+  //               throw new Error('Failed to add order item');
+  //           }
 
-            const data = await response.json();
-            return data; // Collect response data for each item
-        });
+  //           const data = await response.json();
+  //           return data; // Collect response data for each item
+  //       });
 
-        // Wait for all the order item requests to complete
-        const results = await Promise.all(orderItemsRequests);
-        console.log('All items added:', results);
+  //       // Wait for all the order item requests to complete
+  //       const results = await Promise.all(orderItemsRequests);
+  //       console.log('All items added:', results);
 
-        //step 3: Add pricing to payment table
-        const paymentResponse = await fetch(`${API}/payments`, {
-          method: 'POST',
-          body: JSON.stringify({
-              order_id: orderId,
-              payment_method: "unknown",
-              amount: Number(totalPrice),
-              payment_status: "unknown"
-          }),
-          headers: {
-              'Content-Type': 'application/json'
-          }
-      });
+  //       //step 3: Add pricing to payment table
+  //       const paymentResponse = await fetch(`${API}/payments`, {
+  //         method: 'POST',
+  //         body: JSON.stringify({
+  //             order_id: orderId,
+  //             payment_method: "unknown",
+  //             amount: Number(totalPrice),
+  //             payment_status: "unknown"
+  //         }),
+  //         headers: {
+  //             'Content-Type': 'application/json'
+  //         }
+  //     });
       
 
-      if (!paymentResponse.ok) {
-          throw new Error('Failed to create payment');
-      }
+  //     if (!paymentResponse.ok) {
+  //         throw new Error('Failed to create payment');
+  //     }
 
 
-        // Step 4: Navigate to billing details page
-        navigate(`/billing-details/${orderData.newOrder.order_id}`);
+  //       // Step 4: Navigate to billing details page
+  //       navigate(`/billing-details/${orderData.newOrder.order_id}`);
         
-    } catch (error) {
-        console.error('Error processing order and items:', error);
-    }
-};
+  //   } catch (error) {
+  //       console.error('Error processing order and items:', error);
+  //   }
+// };
 
 
 // console.log(addOrderItemsToBackend(cart.peices))
@@ -227,7 +227,8 @@ const Cart = ({ cart, setCart }) => {
           <span>${totalPrice.toFixed(2)}</span>
         </p>
         <Link to='/billing-details'>
-          <button onClick={updateBackendTables} className="checkout-button">CHECKOUT</button>
+          {/* <button onClick={updateBackendTables} className="checkout-button">CHECKOUT</button> */}
+          <button className="checkout-button">CHECKOUT</button>
         </Link>
       </div>
       <Link to='/products' className="continue-shopping">continue shopping →

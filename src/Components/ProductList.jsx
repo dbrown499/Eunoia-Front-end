@@ -79,7 +79,7 @@ const ProductList = () => {
         </section>
     );
 }    
-export default ProductList
+export default ProductList;
 
 
 //used to see what is being rendered on screen 

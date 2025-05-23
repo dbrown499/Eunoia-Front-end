@@ -12,4 +12,4 @@ const ShoppingCartIcon = ({ quantity }) => {
     )
 }
 
-export default ShoppingCartIcon
+export default ShoppingCartIcon;
