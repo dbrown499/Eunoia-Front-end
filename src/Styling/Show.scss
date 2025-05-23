@@ -49,6 +49,8 @@ nav[aria-label="breadcrumb"] {
 /////////////////////////////////SELECTED ITEM SCSS////////////////////////////////////////////////////////
 .product-container {
     // border: 1px red solid;
+    padding-top: 50px;
+    padding-bottom: 50px;
     display: grid;
     grid-template-columns: 15% 40% 45%;
     margin: 50px 0px 50px 0px;
@@ -69,9 +71,9 @@ nav[aria-label="breadcrumb"] {
         object-fit: cover;
     }
 
-    .active-thumbnail {
+    // .active-thumbnail {
         // border: 1px black solid;
-    }
+    // }
 }
 
 .image-carousel {
@@ -119,6 +121,7 @@ nav[aria-label="breadcrumb"] {
 .product-form {
     // max-width: 400px;
     margin: 0 auto;
+    margin-right: 20px;
     font-family: Arial, sans-serif;
     color: #333;
     padding: 20px;
