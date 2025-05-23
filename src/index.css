@@ -1,12 +1,9 @@
-html, body {
+html,
+body {
   background-color: black;
   color: hsl(0deg 0% 98%);
   /* border: 1px blue solid; */
-margin: 0;
-overflow-x: hidden; /* Hide horizontal scrollbar */
-overflow-y: auto;
+  margin: 0;
+  /*overflow-x: hidden; /* Hide horizontal scrollbar 
+  overflow-y: auto;*/
 }
-
-
-  
-

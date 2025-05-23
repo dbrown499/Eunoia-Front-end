@@ -1,18 +1,22 @@
 .nav {
-    position: sticky;
-    top: 0;
-    background-color: black;
     z-index: 1000;
+background-color: rgba(0, 0, 0, 0.5); // black with 50% transparency
     padding: 20px 20px;
     display: grid;
     place-items: center;
     grid-template-columns: 33% 33% 33%;
+    position: sticky;
+    top: 0;
+    
+    // border: solid red 1px;
+
 }
 
 
 .web_name {
-    // border: solid red 1px ;
-    font-size: 30pt;
+    // border: solid red 1px;
+    text-align: left;
+    font-size: 40pt;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: white;
     text-decoration: none;
@@ -96,7 +100,7 @@
     width: 1.5rem;
     height: .2rem;
     border-radius: 10px;
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0); // black with 50% transparency
     transition: transform 0.3s ease, opacity 0.3s ease;
 
 }

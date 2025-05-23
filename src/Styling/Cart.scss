@@ -1,6 +1,6 @@
 .cart- {
     max-width: 800px;
-    margin: auto;
+    margin: 50px auto;
     padding: 20px;
     // font-family: Arial, sans-serif;
     font-family: monospace;
@@ -20,7 +20,8 @@
         align-items: center;
         padding: 10px 0;
         border-bottom: 1px solid #ddd;
-
+        
+        // border: 1px solid red;
     }
 
     .cart-item {

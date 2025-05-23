@@ -15,10 +15,10 @@ const Navbar = ({ quantity }) => {
 
   return (
     <nav className='nav'>
-      <HamburgerMenu className='burger-menu' />
       <h2 className='web_name-holder'>
         <Link to={'/'} className='web_name'>œunöia*</Link>
       </h2>
+      <HamburgerMenu className='burger-menu' />
       <div>
         {isSelectedItem ? (
           <div className='render'>

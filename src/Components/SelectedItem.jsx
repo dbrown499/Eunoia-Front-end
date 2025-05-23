@@ -15,50 +15,50 @@ const SelectedItem = ({ images, itemInfo, cart, setCart }) => {
     };
 
     const incrementQuantity = () => {
-        // setQuantity(prevQuantity => prevQuantity + 1);
+        setQuantity(prevQuantity => prevQuantity + 1);
         const selectedSize = size;
-    
-        //     // Use an asynchronous function to fetch stock
-            const fetchStock = async () => {
-                try {
-                    const stockResponse = await fetch(`${API}/products/${selectedSize}`, {
-                        method: 'GET',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }
-                    });
-    
-                    // console.log(quantity)
 
-                    if (!stockResponse.ok) {
-                        throw new Error('Failed to fetch current stock');
-                    }
-        
-                    const stockData = await stockResponse.json();    
-                    const currentStock = stockData[0].stock; // Assuming the response has a `stock` property
+        // Use an asynchronous function to fetch stock
+    //     const fetchStock = async () => {
+    //         try {
+    //             const stockResponse = await fetch(`${API}/products/${selectedSize}`, {
+    //                 method: 'GET',
+    //                 headers: {
+    //                     'Content-Type': 'application/json'
+    //                 }
+    //             });
 
-                    if(!size){
-                        alert(`Select a size`);
-                        return;
-                    }
-                    if (currentStock <= 0) {
-                        alert(`Product in a size ${stockData[0].size} is out of stock!`);
-                        setSize("SOLD OUT");
-                        return;
-                    }else if (currentStock < quantity + 1){
+    //             // console.log(quantity)
 
-                        alert(`Only ${stockData[0].stock} ${stockData[0].type} is available in a size ${stockData[0].size}.`);
-                        return;
-                    }
-                    setQuantity(prevQuantity => prevQuantity + 1);
-                    // setSize(selectedSize); // Update the state only if the stock is available
-                } catch (error) {
-                    console.error('Error fetching stock:', error.message);
-                }
-            };
-        
-            fetchStock(); // Call the asynchronous function
-        
+    //             if (!stockResponse.ok) {
+    //                 throw new Error('Failed to fetch current stock');
+    //             }
+
+    //             const stockData = await stockResponse.json();
+    //             const currentStock = stockData[0].stock; // Assuming the response has a `stock` property
+
+    //             if (!size) {
+    //                 alert(`Select a size`);
+    //                 return;
+    //             }
+    //             if (currentStock <= 0) {
+    //                 alert(`Product in a size ${stockData[0].size} is out of stock!`);
+    //                 setSize("SOLD OUT");
+    //                 return;
+    //             } else if (currentStock < quantity + 1) {
+
+    //                 alert(`Only ${stockData[0].stock} ${stockData[0].type} is available in a size ${stockData[0].size}.`);
+    //                 return;
+    //             }
+    //             setQuantity(prevQuantity => prevQuantity + 1);
+    //             // setSize(selectedSize); // Update the state only if the stock is available
+    //         } catch (error) {
+    //             console.error('Error fetching stock:', error.message);
+    //         }
+    //     };
+
+    //     fetchStock(); // Call the asynchronous function
+
     };
 
     const decrementQuantity = () => {
@@ -67,7 +67,7 @@ const SelectedItem = ({ images, itemInfo, cart, setCart }) => {
 
     const handleSizeChange = (e) => {
         setSize(e.target.value)
-    };    
+    };
 
 
     const handleAddToCart = () => {
