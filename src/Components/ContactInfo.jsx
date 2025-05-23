@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Styling/ContactInfo.scss'
 import cards from '../../assets/card-icons.png';
+import tiktok from '../../assets/tiktokicon.png';
+import instagram from '../../assets/instagramicon.png';
+import brandLogo from '../../assets/IMG_9543.PNG';
 
 
 const API = import.meta.env.VITE_API_URL;
@@ -61,7 +64,7 @@ const ContactInfo = () => {
       <div className='follow-us join-list '>
 
         <div className='quote'>
-          <img className="image " src="../../assets/IMG_9543.PNG" alt="" />
+          <img className="image " src={brandLogo} alt="" />
         </div>
 
         <div className='join'>
@@ -86,10 +89,10 @@ const ContactInfo = () => {
         <div className='follow'>
           <h1>FOLLOW US</h1>
           <a href="https://www.instagram.com/eunoiaexhibit?igsh=dWgzc20yanJxMWV2" target="_blank">
-            <img src="../../assets/instagramicon.png" className="instagram-image " alt="" />
+            <img src={instagram} className="instagram-image " alt="" />
           </a>
           <a href="https://www.tiktok.com/@eunoiaexhibit?_t=ZT-8tqa9Sdb9vm&_r=1" target="_blank">
-            <img src="../../assets/tiktokicon.png" className="tiktok-image" alt="" />
+            <img src={tiktok} className="tiktok-image" alt="" />
           </a>
         </div>
 
