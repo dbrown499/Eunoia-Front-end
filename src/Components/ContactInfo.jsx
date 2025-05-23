@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Styling/ContactInfo.scss'
+import cards from '../../assets/card-icons.png';
 
 
 const API = import.meta.env.VITE_API_URL;
@@ -102,7 +103,7 @@ const ContactInfo = () => {
       <div className='copyright-tag pay-images'>
         <p className='copyright'>© 2024 ŒUNÖIA. All rights reserved.</p>
         <div className='cards'>
-          <img className="each-card" src="./assets/card-icons.png" alt="cards" />
+          <img className="each-card" src={cards} alt="cards" />
         </div>
       </div>
     </section>
