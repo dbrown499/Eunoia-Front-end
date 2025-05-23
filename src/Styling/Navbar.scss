@@ -1,5 +1,5 @@
 .nav {
-    z-index: 1000;
+    // z-index: 1000;
 background-color: rgba(0, 0, 0, 0.5); // black with 50% transparency
     padding: 20px 20px;
     display: grid;
@@ -7,7 +7,6 @@ background-color: rgba(0, 0, 0, 0.5); // black with 50% transparency
     grid-template-columns: 33% 33% 33%;
     position: sticky;
     top: 0;
-    
     // border: solid red 1px;
 
 }
@@ -188,10 +187,13 @@ background-color: rgba(0, 0, 0, 0.5); // black with 50% transparency
         display: grid;
         place-items: center;
         /* centers both vertically and horizontally */
-        grid-template-columns: 29% 40% 33%;
+        grid-template-columns: 50% 50%;
         // grid-template-columns: 20% 20% 20%;
     }
 
+    .burger-menu {
+        display: none;
+    }
     // .login{
     //     display: none;
     // }
