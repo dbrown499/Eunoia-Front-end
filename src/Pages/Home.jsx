@@ -1,7 +1,6 @@
 import React from 'react';
 import '../Styling/Home.scss';
 
-
 const Home = () => {
     
      

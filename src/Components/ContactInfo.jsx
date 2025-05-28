@@ -5,15 +5,19 @@ import cards from '../../assets/card-icons.png';
 import tiktok from '../../assets/tiktokicon.png';
 import instagram from '../../assets/instagramicon.png';
 import brandLogo from '../../assets/brandlogo.png';
+import Loading from './Loading';
+
 
 
 const API = import.meta.env.VITE_API_URL;
 
 const ContactInfo = () => {
+  const [loading, setLoading] = useState(false);
+  const [responseData, setResponseData] = useState(null);
   const navigate = useNavigate();
 
   const [newEmail, setNewEmail] = useState({
-    name_of_email: null
+    name_of_email: ''
   });
 
   const handleChange = (e) => {
@@ -35,7 +39,12 @@ const ContactInfo = () => {
       return;
     }
 
+    setLoading(true); // Start loading
+
+
     try {
+      await new Promise(resolve => setTimeout(resolve, 8000));
+
       const response = await fetch(`${API}/emails`, {
         method: 'POST',
         body: JSON.stringify(newEmail),
@@ -44,13 +53,18 @@ const ContactInfo = () => {
         }
       });
 
+
       if (!response.ok) {
         throw new Error('Failed to add email');
       }
 
-      await response.json();
-      alert('Thanks For Signing Up!');
-      setNewEmail({ email: '' });
+      const data = await response.json();
+      setResponseData(data);
+      setLoading(false); // ✅ Stop loading right before showing alert
+      setTimeout(() => {
+        alert('Thanks For Signing Up!');
+      }, 100); // Delay alert to ensure loading state is updated     
+      setNewEmail({ name_of_email: '' });
       navigate(`/`);
     } catch (err) {
       console.error(err);
@@ -64,26 +78,28 @@ const ContactInfo = () => {
       <div className='follow-us join-list '>
 
         <div className='quote'>
-          <img className="image " src={brandLogo} alt="" />
+          <img className="image" src={brandLogo} alt="Brand Logo" />
         </div>
 
         <div className='join'>
           <p className='waitlist-description'>Updates & Reminders On New Drops When You Sign Up! </p>
-          <form className='sign-up-container'
-            onSubmit={addEmail}
-          >
+          {loading ? <Loading /> :
 
-            <input
-              placeholder='ENTER YOUR E-MAIL'
-              type="text"
-              id="sign-up"
-              value={newEmail.email}
-              onChange={handleChange}
-              required
-            />
-            <br />
-            <button className='sub-button' type="submit" >SUBSCRIBE</button>
-          </form>
+            <form className='sign-up-container'
+              onSubmit={addEmail}
+            >
+
+              <input
+                placeholder='ENTER YOUR E-MAIL'
+                type="text"
+                id="sign-up"
+                value={newEmail.email}
+                onChange={handleChange}
+                required
+              />
+              <br />
+              <button className='sub-button' type="submit" >SUBSCRIBE</button>
+            </form>}
         </div>
 
         <div className='follow'>
