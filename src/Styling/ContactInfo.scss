@@ -92,19 +92,18 @@
             }
 
             .sub-button:hover {
-                width: 11.4vw;
-                height: 3.8vw;
-                text-transform: uppercase;
+            //     width: 11.4vw;
+            //     height: 3.8vw;
+                // text-transform: uppercase;
                 background-color: rgb(39, 36, 36);
                 color: white;
-                margin-left: 20px;
-                padding-top: 13px;
-                padding-bottom: 13px;
-                font-size: 1vw;
-                line-height: 1vw;
+            //     margin-left: 20px;
+            //     padding-top: 13px;
+            //     padding-bottom: 13px;
+            //     font-size: 1vw;
+            //     line-height: 1vw;
                 transition: all .2s;
                 border: .5px solid white;
-
             }
         }
     }
@@ -244,7 +243,7 @@
 
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 600px) {
     .follow-us {
         padding: 6.3vw 6.3vw;
         display: flex;
@@ -399,4 +398,14 @@
 
     }
 
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+    .each-card {
+            display: none;
+            // height: 40px;
+            // border: solid red 1px;
+            // margin-top: 10px;
+
+        }
 }
